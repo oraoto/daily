@@ -1,0 +1,23 @@
+language: go
+
+go:
+  - master
+
+install:
+  - go get github.com/spf13/hugo
+
+script:
+  - hugo
+
+
+deploy:
+  local_dir: public
+  repo:  oraoto/daily
+  target_branch: gh-pages
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  email: melegant2@gmail.com
+  name: "Oraoto"
+  on:
+    branch: master
