@@ -1,0 +1,62 @@
+baseURL = "https://oraoto.github.io/daily"
+languageCode = "zh-cn"
+title = "Oraoto的日常"
+theme = "minimo"
+Paginate = 15
+
+googleAnalytics = ""
+
+preserveTaxonomyNames = true
+
+[params]
+  description = ""
+  dateFormat = ""
+  copyrightOwner = "Oraoto"
+  copyrightStartYear = "2017"
+  favicon = "favicon.ico"
+  hideEntryNavigation = false
+  customCSS = ["css/custom.css"]
+  customJS = ["js/custom.js"]
+  hideSocialMenu = false
+  showReadTime = false
+
+[params.seo]
+  # Title Separator: - – — · • * ⋆ | ~ « » < >
+  titleSeparator = "•"
+
+[params.opengraph]
+  [params.opengraph.facebook]
+    admins = ""
+    appid = ""
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[social]
+  facebook = ""
+
+[author]
+  name = "Oraoto"
+
+[author.social]
+  github = ""
+
+[permalinks]
+  page = "/:slug/"
+
+[[menu.main]]
+  name = "Main"
+  weight = -70
+  identifier = "repository"
+  url = "/"
+
+# Language Configuration
+defaultContentLanguage = "en"
+
+[languages]
+  # edit this block for your own language
+  [languages.en]
+    lang = "en"
+    languageName = "English"
+    weight = 1
