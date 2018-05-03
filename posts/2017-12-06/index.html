@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='看了  Bit hacking versus memoization: a Stream VByte example
+给定4个2位数字（在一字节内），求和，位运算可能比查表快，关键还是要测试。
+ 负载均衡在分布式架构中是怎么玩起来的？
+二层：一个VIP，多个后端使用相同IP不同MAC，通过改MAC实现转发 三层：一个VIP，多个后端不同IP，转发IP请求？ 四层：IP&#43;端口号 七层：天马行空
+一些数据：Nginx每秒2-10万并发，一万个长连接（keep-alive）,仅消耗2.5MB内存。
+ 美团外卖：日订单量超1600万的自动化业务运维之路
+ 互联网金融公司在分布式数据库的运维实践
+用MariaDB替换MySQL：
+ in和exists，直接重写为join关联查询(MySQL5.6版本) Jemalloc 多线程顺序并行复制、无序并行复制、多源复制 ColumnStore做OLAP 审计日志Audit Log  高可用： &#43; MHA &#43; MMH &#43; PXC
+演进：主从 -&gt; 一主多从 -&gt; 单实例分表 -&gt; 分库
+ 从此爱上SQL Monitor！记一次反常理的鉴权查询优化
+多个exist串联or的时候对性能的影响。
+ 基于Storm构建分布式实时处理应用初探
+Storm介绍。
+ 如何打造应对超大流量的高性能负载均衡？
+阿里云的负载均衡，LVS &#43; Tengine。LVS优化：FullNAT（加了SNAT）、并行（RSS技术）、快速路径、指令优化、NUMA。
+ 案例：如何使用欧盟GDPR进行客户体验转型？
+在MongoDB实现客户的单一视图，权限管理、加密、审计等等从而符合GDPR。
+ 且慢，逻辑结构也能让SQL飞？
+从Oracle的逻辑结构（表空间、段、区、块）进行优化。
+ 用分布式日志优化单机数据库系统将成未来标配？
+用日志优化单单机数据库，WAL可能成为瓶颈，用distributed logging减少争用（不是网络的分布式）。
+ 基于Kafka&#43;Strom构建流式计算卖家日志系统'>
+
+<meta property='og:title' content='2017-12-06 • Oraoto'>
+<meta property='og:description' content='看了  Bit hacking versus memoization: a Stream VByte example
+给定4个2位数字（在一字节内），求和，位运算可能比查表快，关键还是要测试。
+ 负载均衡在分布式架构中是怎么玩起来的？
+二层：一个VIP，多个后端使用相同IP不同MAC，通过改MAC实现转发 三层：一个VIP，多个后端不同IP，转发IP请求？ 四层：IP&#43;端口号 七层：天马行空
+一些数据：Nginx每秒2-10万并发，一万个长连接（keep-alive）,仅消耗2.5MB内存。
+ 美团外卖：日订单量超1600万的自动化业务运维之路
+ 互联网金融公司在分布式数据库的运维实践
+用MariaDB替换MySQL：
+ in和exists，直接重写为join关联查询(MySQL5.6版本) Jemalloc 多线程顺序并行复制、无序并行复制、多源复制 ColumnStore做OLAP 审计日志Audit Log  高可用： &#43; MHA &#43; MMH &#43; PXC
+演进：主从 -&gt; 一主多从 -&gt; 单实例分表 -&gt; 分库
+ 从此爱上SQL Monitor！记一次反常理的鉴权查询优化
+多个exist串联or的时候对性能的影响。
+ 基于Storm构建分布式实时处理应用初探
+Storm介绍。
+ 如何打造应对超大流量的高性能负载均衡？
+阿里云的负载均衡，LVS &#43; Tengine。LVS优化：FullNAT（加了SNAT）、并行（RSS技术）、快速路径、指令优化、NUMA。
+ 案例：如何使用欧盟GDPR进行客户体验转型？
+在MongoDB实现客户的单一视图，权限管理、加密、审计等等从而符合GDPR。
+ 且慢，逻辑结构也能让SQL飞？
+从Oracle的逻辑结构（表空间、段、区、块）进行优化。
+ 用分布式日志优化单机数据库系统将成未来标配？
+用日志优化单单机数据库，WAL可能成为瓶颈，用distributed logging减少争用（不是网络的分布式）。
+ 基于Kafka&#43;Strom构建流式计算卖家日志系统'>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2017-12-06/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-12-06T09:51:19&#43;08:00'/><meta property='article:modified_time' content='2017-12-06T09:51:19&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2017-12-06 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2017-12-06/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2017-12-06</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="https://lemire.me/blog/2017/11/28/bit-hacking-versus-memoization-a-stream-vbyte-example/">Bit hacking versus memoization: a Stream VByte example</a></p>
+
+<p>给定4个2位数字（在一字节内），求和，位运算可能比查表快，关键还是要测试。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/RncTSB9iDpQtOl1HCCJLmQ">负载均衡在分布式架构中是怎么玩起来的？</a></p>
+
+<p>二层：一个VIP，多个后端使用相同IP不同MAC，通过改MAC实现转发
+三层：一个VIP，多个后端不同IP，转发IP请求？
+四层：IP+端口号
+七层：天马行空</p>
+
+<p>一些数据：Nginx每秒2-10万并发，一万个长连接（keep-alive）,仅消耗2.5MB内存。</p></li>
+
+<li><p><a href="https://mp.weixin.qq.com/s/IzQzDm7F8y2t0pYG_sEepA">美团外卖：日订单量超1600万的自动化业务运维之路</a></p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/8a5QjPR6LO0EUhAkMSja0g">互联网金融公司在分布式数据库的运维实践</a></p>
+
+<p>用MariaDB替换MySQL：</p>
+
+<ul>
+<li>in和exists，直接重写为join关联查询(MySQL5.6版本)</li>
+<li>Jemalloc</li>
+<li>多线程顺序并行复制、无序并行复制、多源复制</li>
+<li>ColumnStore做OLAP</li>
+<li>审计日志Audit Log</li>
+</ul>
+
+<p>高可用：
++ MHA
++ MMH
++ PXC</p>
+
+<p>演进：主从 -&gt; 一主多从 -&gt; 单实例分表 -&gt; 分库</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/GVwyopklEKbvc194Myt2dQ">从此爱上SQL Monitor！记一次反常理的鉴权查询优化</a></p>
+
+<p>多个exist串联or的时候对性能的影响。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/rCm3OzAMLX2T3kSLcNFlkg">基于Storm构建分布式实时处理应用初探</a></p>
+
+<p>Storm介绍。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/DKYg6Hz00YmBPEHg0WeZ_A">如何打造应对超大流量的高性能负载均衡？</a></p>
+
+<p>阿里云的负载均衡，LVS + Tengine。LVS优化：FullNAT（加了SNAT）、并行（RSS技术）、快速路径、指令优化、NUMA。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/GnM5-z2cy08WlpR3UdrQOA">案例：如何使用欧盟GDPR进行客户体验转型？</a></p>
+
+<p>在MongoDB实现客户的单一视图，权限管理、加密、审计等等从而符合GDPR。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/B-Ylaj3EIHhFWsT8FZSKMw">且慢，逻辑结构也能让SQL飞？</a></p>
+
+<p>从Oracle的逻辑结构（表空间、段、区、块）进行优化。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/it204eMoxfGxWkUOVyk2Fw">用分布式日志优化单机数据库系统将成未来标配？</a></p>
+
+<p>用日志优化单单机数据库，WAL可能成为瓶颈，用distributed logging减少争用（不是网络的分布式）。</p></li>
+
+<li><p><a href="http://mp.weixin.qq.com/s/WTkRQ9NpmXwDTEW6Drq62w">基于Kafka+Strom构建流式计算卖家日志系统</a></p>
+
+<p>Kafla + Storm + ES + HBase</p></li>
+
+<li><p><a href="https://johanneshoff.com/pony-subtypes/pony%20subtypes.svg">Pony capability subtypes</a></p></li>
+
+<li><p><a href="https://blog.cloudflare.com/go-dont-collect-my-garbage/">Go, don&rsquo;t collect my garbage</a></p>
+
+<p>减少GC频率来提高并发性能。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-12-05/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2017-12-05</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-12-07/'>
+        <span class='screen-reader'>Next post: </span>2017-12-07<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+

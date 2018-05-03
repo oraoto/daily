@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content=' 看了  Go: the Good, the Bad and the Ugly
+Go的优缺点
+ Learning to Learn
+Meta-leaning常用的方法：循环模型、度量学习、优化器学习，MAML算法直接学习参数的初始值，学到的值有很好的泛化性能，对输入敏感，learner只需少量样本就可以调优。
+ Is sorted using SIMD instructions
+用SIMD实现is_sorted，AVX2有两倍以上提速，基本思路是把数组错一位复制到两个vector，然后SIMD比较两个vecotr对应数字大小，结果不全为0就是没排序的。
+SSE：两次_mm_loadu_si128、一次_mm_cmpgt_epi32、一次_mm_test_all_zeros，通过_mm_palignr_epi8减少读反而更慢了。
+GCC -O3能生成类似的结果，但没有early return。
+ What are control and prediction mean in reinforcement learning?
+预测和控制是RL的基本任务。Model free的RL通过Q(状态，行动)来进行预测，控制就是找到某状态下Q函数最大的动作，这就需要遍历全部可能的动作。根据反例得到Imagination values可以减少可行的行动。
+ 机器人学习最前沿：一眼模仿学习（One-Shot Imitation Learning）的三级跳
+One-Shot Imitation Learning，MAML算法。
+  '>
+
+<meta property='og:title' content='2018-04-17 • Oraoto'>
+<meta property='og:description' content=' 看了  Go: the Good, the Bad and the Ugly
+Go的优缺点
+ Learning to Learn
+Meta-leaning常用的方法：循环模型、度量学习、优化器学习，MAML算法直接学习参数的初始值，学到的值有很好的泛化性能，对输入敏感，learner只需少量样本就可以调优。
+ Is sorted using SIMD instructions
+用SIMD实现is_sorted，AVX2有两倍以上提速，基本思路是把数组错一位复制到两个vector，然后SIMD比较两个vecotr对应数字大小，结果不全为0就是没排序的。
+SSE：两次_mm_loadu_si128、一次_mm_cmpgt_epi32、一次_mm_test_all_zeros，通过_mm_palignr_epi8减少读反而更慢了。
+GCC -O3能生成类似的结果，但没有early return。
+ What are control and prediction mean in reinforcement learning?
+预测和控制是RL的基本任务。Model free的RL通过Q(状态，行动)来进行预测，控制就是找到某状态下Q函数最大的动作，这就需要遍历全部可能的动作。根据反例得到Imagination values可以减少可行的行动。
+ 机器人学习最前沿：一眼模仿学习（One-Shot Imitation Learning）的三级跳
+One-Shot Imitation Learning，MAML算法。
+  '>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2018-04-17/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-04-17T13:33:57&#43;08:00'/><meta property='article:modified_time' content='2018-04-17T13:33:57&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2018-04-17 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2018-04-17/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2018-04-17</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/">Go: the Good, the Bad and the Ugly</a></p>
+
+<p>Go的优缺点</p></li>
+
+<li><p><a href="http://bair.berkeley.edu/blog/2017/07/18/learning-to-learn/">Learning to Learn</a></p>
+
+<p>Meta-leaning常用的方法：循环模型、度量学习、优化器学习，MAML算法直接学习参数的初始值，学到的值有很好的泛化性能，对输入敏感，learner只需少量样本就可以调优。</p></li>
+
+<li><p><a href="http://0x80.pl/notesen/2018-04-11-simd-is-sorted.html">Is sorted using SIMD instructions</a></p>
+
+<p>用SIMD实现is_sorted，AVX2有两倍以上提速，基本思路是把数组错一位复制到两个vector，然后SIMD比较两个vecotr对应数字大小，结果不全为0就是没排序的。</p>
+
+<p>SSE：两次<code>_mm_loadu_si128</code>、一次<code>_mm_cmpgt_epi32</code>、一次<code>_mm_test_all_zeros</code>，通过<code>_mm_palignr_epi8</code>减少读反而更慢了。</p>
+
+<p>GCC -O3能生成<a href="https://news.ycombinator.com/item?id=16842426">类似的结果</a>，但没有early return。</p></li>
+
+<li><p><a href="https://www.quora.com/What-are-control-and-prediction-mean-in-reinforcement-learning">What are control and prediction mean in reinforcement learning?</a></p>
+
+<p>预测和控制是RL的基本任务。Model free的RL通过<code>Q(状态，行动)</code>来进行预测，控制就是找到某状态下Q函数最大的动作，这就需要遍历全部可能的动作。根据反例得到Imagination values可以减少可行的行动。</p></li>
+
+<li><p><a href="https://zhuanlan.zhihu.com/p/33789604">机器人学习最前沿：一眼模仿学习（One-Shot Imitation Learning）的三级跳</a></p>
+
+<p>One-Shot Imitation Learning，MAML算法。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2018-04-12/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2018-04-12</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2018-04-21/'>
+        <span class='screen-reader'>Next post: </span>2018-04-21<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+

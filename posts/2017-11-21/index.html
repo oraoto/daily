@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='看了  Rustc performance data
+Rust编译器的性能变化。
+ Refactor type memory layouts and ABIs, to be more general and easier to optimize.
+优化Rust数据类型的内存布局，例如Option&lt;Option&lt;bool&gt;&gt;可以只用1字节。
+ Haskell equality table
+哈哈，&quot;&quot; == []，没什么意外的东西。
+ The Seven Myths of Erlang Performance
+ tail-recursive不一定比body-recursive快 BEAM是一个基于寄存器的threaded-code interpreter  The Road to 2 Million Websocket Connections in Phoenix
+两百万WebSocket连接，用45台Tsung客户端，1台128G服务端做测试。
+ Shorthand comparisons in PHP 
+?:和??。
+ State of GraphQL PHP libraries and Symfony integrations in 2017'>
+
+<meta property='og:title' content='2017-11-21 • Oraoto'>
+<meta property='og:description' content='看了  Rustc performance data
+Rust编译器的性能变化。
+ Refactor type memory layouts and ABIs, to be more general and easier to optimize.
+优化Rust数据类型的内存布局，例如Option&lt;Option&lt;bool&gt;&gt;可以只用1字节。
+ Haskell equality table
+哈哈，&quot;&quot; == []，没什么意外的东西。
+ The Seven Myths of Erlang Performance
+ tail-recursive不一定比body-recursive快 BEAM是一个基于寄存器的threaded-code interpreter  The Road to 2 Million Websocket Connections in Phoenix
+两百万WebSocket连接，用45台Tsung客户端，1台128G服务端做测试。
+ Shorthand comparisons in PHP 
+?:和??。
+ State of GraphQL PHP libraries and Symfony integrations in 2017'>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2017-11-21/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-11-21T10:07:20&#43;08:00'/><meta property='article:modified_time' content='2017-11-21T10:07:20&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2017-11-21 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2017-11-21/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2017-11-21</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="http://perf.rust-lang.org/index.html">Rustc performance data</a></p>
+
+<p>Rust编译器的性能变化。</p></li>
+
+<li><p><a href="https://github.com/rust-lang/rust/pull/45225">Refactor type memory layouts and ABIs, to be more general and easier to optimize.</a></p>
+
+<p>优化Rust数据类型的内存布局，例如<code>Option&lt;Option&lt;bool&gt;&gt;</code>可以只用1字节。</p></li>
+
+<li><p><a href="https://htmlpreview.github.io/?https://github.com/quchen/articles/blob/master/haskell-equality-table.html">Haskell equality table</a></p>
+
+<p>哈哈，<code>&quot;&quot; == []</code>，没什么意外的东西。</p></li>
+
+<li><p><a href="http://erlang.org/doc/efficiency_guide/myths.html">The Seven Myths of Erlang Performance</a></p>
+
+<ul>
+<li>tail-recursive不一定比body-recursive快</li>
+<li>BEAM是一个基于寄存器的threaded-code interpreter</li>
+</ul></li>
+
+<li><p><a href="http://phoenixframework.org/blog/the-road-to-2-million-websocket-connections">The Road to 2 Million Websocket Connections in Phoenix</a></p>
+
+<p>两百万WebSocket连接，用45台Tsung客户端，1台128G服务端做测试。</p></li>
+
+<li><p><a href="https://www.stitcher.io/blog/shorthand-comparisons-in-php">Shorthand comparisons in PHP </a></p>
+
+<p><code>?:</code>和<code>??</code>。</p></li>
+
+<li><p><a href="https://symfony.fi/entry/state-of-graphql-php-libraries-and-symfony-integrations-in-2017">State of GraphQL PHP libraries and Symfony integrations in 2017</a></p>
+
+<p>Webonyx GraphQL PHP 和Youshido GraphQL</p></li>
+
+<li><p><a href="https://www.opsdash.com/blog/job-queues-in-go.html">Job Queues in Go</a></p>
+
+<p>用Go实现工作队列。</p></li>
+
+<li><p><a href="https://nickbabcock.github.io/Farmhash.Sharp/">Farmhash.Sharp</a></p>
+
+<p>.NET实现的Farmhash算法。</p></li>
+
+<li><p><a href="https://zhuanlan.zhihu.com/p/31142786">使用 Rust 构建分布式 Key-Value Store</a></p></li>
+
+<li><p><a href="Rendering HTML at 1000 FPS – Part 2">Rendering HTML at 1000 FPS – Part 2</a></p>
+
+<p>优化GPU命令，减少API调用、内存消耗和同步。</p></li>
+
+<li><p><a href="https://www.youtube.com/watch?v=29LLRKIL_TI">7 common mistakes in Go and when to avoid them</a></p>
+
+<ol>
+<li>多用接口</li>
+<li>多用io.Reader和io.Writer</li>
+<li>只用必要的接口</li>
+<li>函数is Good</li>
+<li>要共享就用指针，不共享就用值，性能不是第一考虑</li>
+<li>导出错误值，不用比较字符串</li>
+<li>并发安全</li>
+</ol></li>
+
+<li><p><a href="https://medium.com/@jmperezperez/drawing-images-using-edge-detection-and-svg-animation-16a1a3676d3">Drawing images using edge detection and SVG animation</a></p>
+
+<p>Edge detection + SVG 动画。</p></li>
+</ul>
+
+<h1 id="看不懂">看不懂</h1>
+
+<ul>
+<li><p><a href="https://www.youtube.com/watch?v=KZIN9f9rI34">Monad Transformer State </a></p>
+
+<p>Monad Transformer里要避免丢弃state。</p>
+
+<p>Control function 不能被lift。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-11-20/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2017-11-20</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-11-22/'>
+        <span class='screen-reader'>Next post: </span>2017-11-22<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+

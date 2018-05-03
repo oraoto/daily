@@ -1,0 +1,1486 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oraoto的日常</title>
+    <link>https://oraoto.github.io/daily/</link>
+    <description>Recent content on Oraoto的日常</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 21 Apr 2018 14:13:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://oraoto.github.io/daily/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018-04-21</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-21/</link>
+      <pubDate>Sat, 21 Apr 2018 14:13:50 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-21/</guid>
+      <description> 看了  百家争鸣的Meta Learning/Learning to learn
+ XS7 @ TC-39
+用于嵌入式的JS运行环境，支持99%的es 2017。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-04-17</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-17/</link>
+      <pubDate>Tue, 17 Apr 2018 13:33:57 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-17/</guid>
+      <description> 看了  Go: the Good, the Bad and the Ugly
+Go的优缺点
+ Learning to Learn
+Meta-leaning常用的方法：循环模型、度量学习、优化器学习，MAML算法直接学习参数的初始值，学到的值有很好的泛化性能，对输入敏感，learner只需少量样本就可以调优。
+ Is sorted using SIMD instructions
+用SIMD实现is_sorted，AVX2有两倍以上提速，基本思路是把数组错一位复制到两个vector，然后SIMD比较两个vecotr对应数字大小，结果不全为0就是没排序的。
+SSE：两次_mm_loadu_si128、一次_mm_cmpgt_epi32、一次_mm_test_all_zeros，通过_mm_palignr_epi8减少读反而更慢了。
+GCC -O3能生成类似的结果，但没有early return。
+ What are control and prediction mean in reinforcement learning?
+预测和控制是RL的基本任务。Model free的RL通过Q(状态，行动)来进行预测，控制就是找到某状态下Q函数最大的动作，这就需要遍历全部可能的动作。根据反例得到Imagination values可以减少可行的行动。
+ 机器人学习最前沿：一眼模仿学习（One-Shot Imitation Learning）的三级跳
+One-Shot Imitation Learning，MAML算法。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-04-12</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-12/</link>
+      <pubDate>Thu, 12 Apr 2018 14:28:42 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-12/</guid>
+      <description> 看了  Differentiable Plasticity: A New Method for Learning to Learn
+除了训练好的固定权重，还有根据新输入和赫布理论调整的权重。
+ Cancellation in Managed Threads
+通过传递cancellation token，协作性地取消任务。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-04-08</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-08/</link>
+      <pubDate>Sun, 08 Apr 2018 10:03:35 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-08/</guid>
+      <description>看了  Writing To The Framebuffer
+可以通过/dev/fb0读写framebuffer，framebuffer在GPU显存里，由DMA读到显示器。
+ Netflix FlameScope
+用秒级的热力图可视化火焰图，可以用来
+ OpenAI提出HER算法，AI系统学会从错误中学习
+Hindsight Experience Reply，失败的尝试会得到一个结果，把这个结果作是实现了一个虚拟的目标，从错误中学习，可以用作讲理机制的替代。
+ 突破特征表达方式：微软亚洲研究院CVPR论文DA-GAN，让计算机创造奇妙“新物种”
+原始图片分割成不同的部分T，不同的部分分别投射到一个“隐空间”,生成样本T&amp;rsquo;，然后通过大量的图片训练，去验证T-T’对应的精确程度，确保从T-T’的过程并非随机产生，而是保持一定的规则，进而让“隐空间”的模型逐步趋于完善。
+用到Deep attention encoder。
+ ICASSP Oral 论文：阿里提出低计算量语音合成系统，速度提升4倍
+ 显著超越流行长短时记忆网络，阿里提出DFSMN语音识别声学模型
+深度前馈序列记忆网络（DFSMN），可以直接用反向传播，不用BPTT，到达Bi-LSTM相近的效果，性能更好。
+用WORLD声音合成器提取声学特征，文本经过正则化和词法分析得到语言学特征，两种特征输入到网络进行训练。生成时只有语言学特征，网络生成声学特征，再由WORLD合成。
+ 中国团队夺得MegaFace百万人脸识别冠军，精度98%再创记录，论文代码+数据全开源
+卷积层到输出层：Convolution -&amp;gt; BN -&amp;gt; Dropout -&amp;gt; FullyConnected -&amp;gt; BN。ResNet单元用BN -&amp;gt; Conv -&amp;gt;BN -&amp;gt; PReLu -&amp;gt; Conv -&amp;gt; BN。Loss用Additive Angular Margin，有几何解释性，同时最小化内类距离和最大化类见距离。
+ 谷歌演化AutoML自动发现神经网络新架构
+ 微软打造深度学习开源框架“自动翻译机”：不同框架轻松切换（附性能对比）
+ Container isolation gone wrong 
+ Another reason why your Docker containers may be slow</description>
+    </item>
+    
+    <item>
+      <title>2018-04-03</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-03/</link>
+      <pubDate>Tue, 03 Apr 2018 09:53:38 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-03/</guid>
+      <description> 看了  Can deep learning be used in image matching for relative orientation of images to be used in photogrammetry?
+估算相机位置，传统方法还是比较好。
+ Can neural networks have thousands of output classes?
+超多分类的时候可以用Noise Contrastive Estimation、Beam search。
+ Atomics ☢ and memory ordering Reddit
+Memory ordering影响和其他内存位置的同步：
+ Relaxed：不管和其他内存位置的同步，只保证单个原子变量在单个线程里的顺序 Release：写内存（不仅原子变量），然后发布全部的修改 Acquire：获取全部的修改，读内存（不仅原子变量） SeqCst：和所有的SeqCst操作同步  Release和Acuire要作用在同一个原子变量才能保证同步，Release之后不能再写到要同步的内存，相对于放弃所有权。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-04-02</title>
+      <link>https://oraoto.github.io/daily/posts/2018-04-02/</link>
+      <pubDate>Mon, 02 Apr 2018 15:58:57 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-04-02/</guid>
+      <description> 看了  What is the future of TensorFlow?
+TensorFlow没未来:)
+ How We&amp;rsquo;re Building One Y Combinator Startup a Day
+Anvil，在Web里设计、写代码、部署，集成度更高的BasS。
+ Web Application Penetration Testing Cheat Sheet
+Web渗透测试cheat sheet。
+ How is a convolutional neural network able to learn invariant features?
+平移不变性是因为卷积核，池化可以降维和少许平移不变性。
+ Turn TensorFlow functions into mathematical notations and diagrams
+用图形表示TF的tensor，用公式表示运算，对初学者很友好。
+ PowerShell and Events: Engine Events
+ PowerShell and Events: WMI Temporary Event Subscriptions
+PowerShell的事件系统。SupportEvent默认隐藏，ForwardEvent可以从远程或者后台任务里传到队列。 $host.EnterNestedPrompt()可以进入作用域，666。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-03-29</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-29/</link>
+      <pubDate>Thu, 29 Mar 2018 13:39:20 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-29/</guid>
+      <description> 看了  Do software engineers need to know math?
+No, except some specific domain.
+ Why are CNNs better at classification than RNNs?
+不是绝对的。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-03-28</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-28/</link>
+      <pubDate>Wed, 28 Mar 2018 14:45:00 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-28/</guid>
+      <description> 看了  Quick and Efficient PowerShell Script Debugging with Breakpoints
+Set-PsBreakPoint和Write-Debug可以设断点，可以步进，看调用栈，看变量。
+ Rust + Node.js are awesome!
+通过Neon在Node.js使用Rust，减少内存使用和优化性能。
+ cd is Wasting Your Time
+AutoJump，有PowerShell版，顺便支持了PowerShell Core.
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-03-27</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-27/</link>
+      <pubDate>Tue, 27 Mar 2018 12:27:24 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-27/</guid>
+      <description> 看了  On the State of the Art of Evaluation in Neural Language Models
+通过Google Vizier做自动化黑盒超参数调优，标准的LSTM架构加上合适的正则化，要比Recurrent Highway Networks、NAS模型好。
+超参数很重要。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-03-26</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-26/</link>
+      <pubDate>Mon, 26 Mar 2018 10:13:58 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-26/</guid>
+      <description>看了  No ad hoc parser in NeoPG 
+就算是最简单的数据结构都用形式文法来做解析。
+ Things I wish we had known before we started our first Machine Learning project
+ 开始前先检验数据 一次预处理，N多次训练，不要把ETL和模型训练混在一起 让数据、知识更容易在团队里分享 监控！ 在最初就要对预测进行性能测试 数据版本化  什么是GADT？它有什么作用？
+到底generalize了什么？
+ Introduction to Recurrent Neural Networks in Pytorch
+用PyTorch实现Elman网络，每个epoch（就是一个序列）清零一次context，序列每处理一个输入，就unlink context，就不会反向传播到上一个时间之前。
+ You are not your tools
+不要用工具集定义自己的技能集，程序员除了工具，还需要收集需求、调试代码、设计、抽象等等。
+ Performance Under Load
+Netflix动态并发限制。
+ Avoid Else, Return Early
+减少缩进，减少if/else，错误处理是噪音。
+ Python 3’s range is more powerful than Python 2’s xrange</description>
+    </item>
+    
+    <item>
+      <title>2018-03-21</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-21/</link>
+      <pubDate>Wed, 21 Mar 2018 10:12:47 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-21/</guid>
+      <description> 看了  Breaking the Ledger Security Model
+MCU把固件发给Secure Element，SE再验证固件，如果MCU只发了官方固件，没发修改的部分，就可以骗过SE。
+ EffNet: An Efficient Structure for Convolutional Neural Networks
+改进MobileNet，把3x3的depthwise convolution分成3x1 + max pool + 1x3，整个网络只在最后的全连接输出才有压缩比大于4。
+ Neural Network Quine
+训练一个网络输出自身的权重。可以同时训练一个辅助任务（例如MNIST），辅助任务会慢慢提高，而自身复制会慢慢下降。
+ AI2: Safety and Robustness Certiﬁcation of Neural Networks with Abstract Interpretation
+通过abstract interpretation神经网络进行分析验证。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-03-20</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-20/</link>
+      <pubDate>Tue, 20 Mar 2018 11:33:10 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-20/</guid>
+      <description>看了  Database constraints in Postgres: The last line of defense
+Postgresql支持部分索引、CHECK约束（能用自定义函数）、EXCLUDE约束。
+ Announcing Microsoft DirectX Raytracing!
+DX12在API层支持光线跟踪。
+ How can a deep neural network with ReLU activations in its hidden layers approximate any function? A ReLU is linear if input is greater than 0, or else its output is 0. So isn&amp;rsquo;t it just a linear activation or simply shut off?
+ReLU把激活空间划分/折叠成很多线性区域，相当于分类器而不是函数近似，这样反而有更强的泛化能力。
+ How to use HDF5 files in Python</description>
+    </item>
+    
+    <item>
+      <title>2018-03-19</title>
+      <link>https://oraoto.github.io/daily/posts/2018-03-19/</link>
+      <pubDate>Mon, 19 Mar 2018 15:32:36 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-03-19/</guid>
+      <description>看了  The systems design interview
+ 面试官准备好问题的场景，例如设计有个分布式缓存，给出一些数值，例如用户数、数据量等等，不用太完整 面试者要理清问题的范围，询问更多的数据 面试中把问题分解成子问题 处理其中一个子问题，可以向面试官询问更多信息 面试官深入讨论这个子问题的细节，必要的时候要提供提示 回到第4步，直到时间结束  Notes on Distributed Systems for Young Bloods
+ 分布式系统很难设计，因为它们经常出错 可靠的分布式系统成本要比单机系统大 可靠的、开源的单机系统更常见 协调很难 如果内存住够，问题可能会简单很多 “慢”是最难debug的问题 系统的每个环节都要实现backpressure 系统要部分可用 监控 用百分数衡量性能，不要用平均数 学会评估容量 Feature flags 谨慎选择id空间 利用数据的局部性 不用把缓存数据写回磁盘 计算机吸能再提升 用CAP评价系统 分离出服务  Why inheritance never made any sense Lobster
+继承可以分成3种：
+ 抽象数据类型继承：A和B有完全一样的行为，Liskov替换原则 实现继承：代码重用，A从B得到一些属性然后修改或增加属性 Ontological（本体？）继承：特化，A是B的特例  这三者可能是冲突的，所以不用试图用其中一种来实现其他的。
+ Your domain model is not your object model. Your domain model is not your abstract data type model.</description>
+    </item>
+    
+    <item>
+      <title>2018-01-18</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-18/</link>
+      <pubDate>Thu, 18 Jan 2018 11:22:58 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-18/</guid>
+      <description> 看了  Symfony 4: HTTP/2 Push and Preloading
+当HTTP/2服务器检查到HTTP头里有Link，就会触发push，在同一个HTTP/2连接里发送内容。
+ Scaling SQLite to 4M QPS on a Single Server (EC2 vs Bare Metal)
+SQLite读性能很好，优化之后可以四百万只读QPS（1T内存、3T SSD、192核的机器）。
+SQLite有个支持页锁的分支。
+Bedrock在SQLite基础上做分布式。
+ Making WebAssembly even faster: Firefox’s new streaming and tiering compiler
+流式编译器在下载的时候进行编译，这样可以更快开始执行代码，而优化编译器在后台运行，优化完再替换掉之前的代码。
+ 从JIMI的FAQ谈现有的聊天机器人限制
+有限的上下文信息的规则匹配系统。
+  看不懂  Start Your Own ISP
+自己买硬件搭无线ISP。
+ instruction explosion in guile
+把大的指令分解成小指令，然后优化。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-01-17</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-17/</link>
+      <pubDate>Wed, 17 Jan 2018 09:59:43 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-17/</guid>
+      <description> 看了  Don&amp;rsquo;t Throw Out Your Algorithms Book Just Yet: Classical Data Structures That Can Outperform Learned Indexes
+对Learned Indexes的回应，有些传统的（非机器学习得到）数据结构性能和内存使用都更优，例如Cuckoo hash。
+ 神经网络模糊测试：将DNN应用于软件安全测试
+通过神经网络改进原有的灰箱模糊测试器American Fuzzy Lop。
+ Embedded Programming for IoT by John Light
+嵌入式开发中内存管理和协程的使用，没太多细节。
+ 干货 | NIPS 2017：用于序列生成的推敲网络 
+一个Encoder，两个Decoder，第一个生成粗略的序列，第二个以Encoder和第一个Decoder的输出进行润色。
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-01-12</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-12/</link>
+      <pubDate>Fri, 12 Jan 2018 12:29:14 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-12/</guid>
+      <description> 看了  Finding a CPU Design Bug in the Xbox 360
+一个危险的prefetch指令可能被branch preidctor执行，虽然代码中没有实际执行，但是prefetch还是生效了。
+ Web Scraping With Rust
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-01-10</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-10/</link>
+      <pubDate>Wed, 10 Jan 2018 13:21:07 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-10/</guid>
+      <description> 看了 Embedding  How does Keras &amp;lsquo;Embedding&amp;rsquo; layer work?
+用输入的整数作为下标
+ What is an Embedding in Keras?
+转成one-hot然后做矩阵相乘。Embed学习得到一个（词汇数，特征数）矩阵。输入是 （N，词汇数），第二维是个one-hot编码的向量，每个词对应下标为1，其他为0。输入和Embed矩阵相乘得到：（N，特征数）
+  </description>
+    </item>
+    
+    <item>
+      <title>2018-01-02</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-02/</link>
+      <pubDate>Tue, 02 Jan 2018 13:21:55 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-02/</guid>
+      <description>看了  GPD Pocket
+4核8G，比乞丐SP4还好。
+ Rails 5.2 adds bootsnap to the app to speed up boot time
+减少文件读取和缓存编译结果来优化启动时间，启动速度提示50%~75%，有点像PHP，但还是慢。
+ Announcing lazymention: elegant outbound Webmention for static sites
+给静态页面加Webmention支持（类似Pingback），抓取页面然后给页面里的连接发“Pingback”。
+ RAM-less Buffers
+把XMM寄存器当内存用。
+ Building a Raspberry Pi Cluster
+用Raspberry Pi 搭Kubernete集群。
+ Multiplying Matrices, Fast and Slow
+通过Lightweight Modular Staging生成优化的本地代码，比支持的Java10还好。
+ Vectorised Logical Operations in Java 9
+Java9支持对逻辑运算的向量化。
+ Building healthier containers
+  可以不用在容器里放shell的，用&amp;ndash;pid、&amp;ndash;net和&amp;ndash;cap-add sys_admin。
+ 3 years on Google App Engine.</description>
+    </item>
+    
+    <item>
+      <title>2018-01-01</title>
+      <link>https://oraoto.github.io/daily/posts/2018-01-01/</link>
+      <pubDate>Mon, 01 Jan 2018 13:21:14 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2018-01-01/</guid>
+      <description> 看了  .Net Core 2.0 Performance Notes Revisited
+C#性能可以比Java好。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-21</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-21/</link>
+      <pubDate>Thu, 21 Dec 2017 10:03:03 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-21/</guid>
+      <description>看了  .NET Event Counters – When logging isn’t fast enough Introduction Tutorial: How to measure performance for very frequent events using EventCounters
+.NET的EventCounter，支持一些基本统计信息，先在进程内记录，然后写入到ETW。
+ Performance counter vs ETW
+Performacne counter用于系统性能和健康状态，ETW用于诊断。也可以通过ETW读Perf Counter。
+ GOOGLE MAPS’S MOAT: How far ahead of Apple Maps is Google Maps?
+Google用大量的数据去填充地图信息，遥遥领先其他地图。
+ DebianJoe/nullWM
+哈哈，最简单的窗口管理器。
+ PHP AMQP clients. Benchmark them all!
+PHP AMQP客户端性能测试，Go的没快多少。
+ Partial Information Attacks on Real-world AI
+先给出目标分类，然后逐渐改变成其他目标，但是分类不变，Natural volution strategies。
+ XenServer 7.</description>
+    </item>
+    
+    <item>
+      <title>2017-12-20</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-20/</link>
+      <pubDate>Wed, 20 Dec 2017 10:22:16 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-20/</guid>
+      <description>看了  GDPR: Why We Stopped Selling Stuff to Europe
+符合GDPR太太难了，直接放弃欧洲市场，WP还有插件直接禁掉
+ Project Management as Code with Graphviz
+用Graphviz管理项目，用git管理历史。
+ Beware the Hex-Men 
+有团伙攻击数据库。
+ AF_UNIX comes to Windows
+Windows也支持Unix socket了，主要方便移植。
+ FD passing for DRI.Next
+sendmsg + SCM_RIGHTS 在进程间传文件描述符，很难用。
+ Post Mortem: The Death of Flash and Rewriting 1.4 Million Lines of Code
+用Haxe重新Flash程序。
+ This is strictly a violation of the TCP specification
+ss可以查看socket状态，ss -n4lt不解析地址（n)，看IPv4(4) 的TCP(t) listen socket(l)。Send-Q是listen的backlog。</description>
+    </item>
+    
+    <item>
+      <title>2017-12-19</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-19/</link>
+      <pubDate>Tue, 19 Dec 2017 10:32:04 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-19/</guid>
+      <description> 看了  winapi 0.3
+模块结构大调整，通过cargo feature flags来控制开启的模块。
+ cache_warmer - tool to warm-up HTTP caches
+GET一批请求来预热cache。
+ Dynamic tracing a Pony + Python program with DTrace
+DTrace很灵活。
+ Make ETW Great Again. - Ruxcon Security Conference
+用ETW跟踪发现恶意软件。
+ Retrieving Symbol Information by Address
+ ENABLE_TRACE_PARAMETERS
+EVENT_ENABLE_PROPERTY_STACK_TRACE可以拿到调用栈，里面是一个地址数组，然后再通过SymFromAddr拿到符号。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-09</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-09/</link>
+      <pubDate>Tue, 19 Dec 2017 10:00:00 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-09/</guid>
+      <description>看了  On Machine Learning and Programming Languages
+机器学习需要新的编程语言
+ Linux Filesystem Hierarchy ： 1.14. /proc
+/proc介绍，可做参考
+ What&amp;rsquo;s a reference in Rust?
+Rust必须在编译期知道内存是在栈、堆还是数据段内。Box是指向堆内存。 要指向原有的内存可以用lifetime+引用（但是不知道具体在哪里）。
+堆上的有：Vec[T]、String、Box，对应的引用类型：&amp;amp;[T], &amp;amp;str, &amp;amp;T。
+ About initramfs
+Initramfs可以在启动时挂载根文件系统。启动的时候，bootloader会加载内核和initramfs镜像到内存， 然后启动内核，内核检测initramfs然后挂在到/，并执行/init（通常是个脚本）。
+ A Programming Language With Only One Command and the Anti-Imperialist Operating System Built on it 
+单指令的编程语言，只有一个命令：做减法，如果结果小于等于0就跳转。
+  看不懂  Making two garbage collectors be good neighbours (using linear types)
+用FFI调用Java，在同一个地址空间上有两个GC，用linear types防止Gc错误释放内存。
+ A Magnetized Needle and a Steady Hand</description>
+    </item>
+    
+    <item>
+      <title>2017-12-18</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-18/</link>
+      <pubDate>Mon, 18 Dec 2017 10:01:53 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-18/</guid>
+      <description>看了  Hybridizer: High-Performance C# on GPUs
+通过Attribute识别MSIL，把MSIL编译到CUDA、AVX，还能把泛型转为类似C++的模板。
+ Visual Studio Code - Top 5 Extensions for PHP
+5个用了3个。
+ Shields.io: Quality metadata badges for open source projects
+一大堆badge。
+ Editor-based Rest Client
+Editor-based REST client，试了一下VSCode的Rest Client，也很方便。
+ What Makes Haskell Unique
+ New techniques to develop low-latency network apps
+ Windows 8 Registered I/O Networking Extensions
+RIO提前锁定需要的缓冲区，固定大小的完成队列，可选的完成事件，可以一次从内核返回多个事件。
+ Kafka &amp;amp; Redis Streams
+在客户端保存各自的读进度（实际Kafka可以保存）。
+ Benchmarkers, Beware the Ephemeral Port Limit</description>
+    </item>
+    
+    <item>
+      <title>2017-12-15</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-15/</link>
+      <pubDate>Fri, 15 Dec 2017 10:01:44 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-15/</guid>
+      <description> 看了  TypeScript 2.4: Spelling Correction 
+用Levenshtein距离出拼写提示。
+ Glasgow Haskell, version 0.10, now available
+25年前GHC 0.10发布，已经有unboxed类型了。
+  看不懂  Vintage Windows GUIs in Everything is going to be OK
+在游戏里用Windows 1.0~95风格的UI。
+ Psychology vs the graphics pipeline
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-14</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-14/</link>
+      <pubDate>Thu, 14 Dec 2017 10:13:08 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-14/</guid>
+      <description> 看了  Detonating a bad rabbit: Windows Defender Antivirus and layered machine learning defenses
+用多层的机器学习方法检查病毒，由简单到复杂。
+ Accident Forgiveness Comes to GPLv2
+违反了GPLv3，在一定时间内改正也是可以被原谅的。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-13</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-13/</link>
+      <pubDate>Wed, 13 Dec 2017 09:58:07 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-13/</guid>
+      <description> 看了  LordNoteworthy/al-khaser secrary/makin
+一下反杀、反调试技巧。
+ 如何在 Laravel 中创建自己的 PHP 辅助函数
+composer
+ Introducing Joy
+用Go写JavaScript。
+ The 2018 Guide to Building Secure PHP Software 
+ [Culture Queries: The best questions to ask in your interview]
+面试时可以问的问题。
+ TQL, an easy-to-use ORM for Rust
+通过宏在编译期生成SQL。
+ Data Analysis with Vector Functional Programming
+向量/数组编程。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017 12 11</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-11/</link>
+      <pubDate>Mon, 11 Dec 2017 10:33:00 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-11/</guid>
+      <description> 看了  Falsehoods programmers believe about programming
+ A Tour of Go in Haskell 
+用Haskell实现类似Go的channel、goroutine。
+还有gochan直接实现go的bounded channel.
+ Zookeeper：分布式系统入门到实战
+Paxos和Raft介绍。
+  看不懂  APOLLO181, Homemade 4-bit TTL Processor based on 74181 chip
+用74181芯片造4位TTL处理器。
+ Undoing the harm of layers
+ Incident review: API and Dashboard outage on 10 October 2017
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-08</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-08/</link>
+      <pubDate>Fri, 08 Dec 2017 09:55:24 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-08/</guid>
+      <description>看了  Sysinternals Sysmon suspicious activity guide
+Sysmon监控系统，记录到事件日志中，配置文件可以参考。
+ Simplistic programming is underrated
+复杂的东西是不合群的，可扩展性往往也差，用复杂的东西不会让牛逼的人觉得你聪明
+ Really smart people have no need to show off. If you are showing off, you are broadcasting that you aren’t really smart.
+Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</description>
+    </item>
+    
+    <item>
+      <title>2017-12-07</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-07/</link>
+      <pubDate>Thu, 07 Dec 2017 12:51:22 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-07/</guid>
+      <description> 看了  Inside the Microsoft FPGA based configurable cloud
+用FPGA加速网络和机器学习，未来是硬件微服务。
+ Snapshot Debugging with Visual Studio 2017
+Fork一个进程然后创建一个快照（非全量），在快照上进行调试，对性能的影响很小。
+ Replacing Elasticsearch with Rust and SQLite
+用Rust和SQLite分析nginx日志。
+ [Announcing TrailDB - An Efficient Library for Storing and Processing Event Data]
+ Introduction to TrailDB
+ Adventures in TrailDB with millions of rows, Python and Go
+压缩存储事件，构造和查询阶段是分开的，可用于离线的用户行为分析。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-12-06</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-06/</link>
+      <pubDate>Wed, 06 Dec 2017 09:51:19 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-06/</guid>
+      <description>看了  Bit hacking versus memoization: a Stream VByte example
+给定4个2位数字（在一字节内），求和，位运算可能比查表快，关键还是要测试。
+ 负载均衡在分布式架构中是怎么玩起来的？
+二层：一个VIP，多个后端使用相同IP不同MAC，通过改MAC实现转发 三层：一个VIP，多个后端不同IP，转发IP请求？ 四层：IP+端口号 七层：天马行空
+一些数据：Nginx每秒2-10万并发，一万个长连接（keep-alive）,仅消耗2.5MB内存。
+ 美团外卖：日订单量超1600万的自动化业务运维之路
+ 互联网金融公司在分布式数据库的运维实践
+用MariaDB替换MySQL：
+ in和exists，直接重写为join关联查询(MySQL5.6版本) Jemalloc 多线程顺序并行复制、无序并行复制、多源复制 ColumnStore做OLAP 审计日志Audit Log  高可用： + MHA + MMH + PXC
+演进：主从 -&amp;gt; 一主多从 -&amp;gt; 单实例分表 -&amp;gt; 分库
+ 从此爱上SQL Monitor！记一次反常理的鉴权查询优化
+多个exist串联or的时候对性能的影响。
+ 基于Storm构建分布式实时处理应用初探
+Storm介绍。
+ 如何打造应对超大流量的高性能负载均衡？
+阿里云的负载均衡，LVS + Tengine。LVS优化：FullNAT（加了SNAT）、并行（RSS技术）、快速路径、指令优化、NUMA。
+ 案例：如何使用欧盟GDPR进行客户体验转型？
+在MongoDB实现客户的单一视图，权限管理、加密、审计等等从而符合GDPR。
+ 且慢，逻辑结构也能让SQL飞？
+从Oracle的逻辑结构（表空间、段、区、块）进行优化。
+ 用分布式日志优化单机数据库系统将成未来标配？
+用日志优化单单机数据库，WAL可能成为瓶颈，用distributed logging减少争用（不是网络的分布式）。
+ 基于Kafka+Strom构建流式计算卖家日志系统</description>
+    </item>
+    
+    <item>
+      <title>2017-12-05</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-05/</link>
+      <pubDate>Tue, 05 Dec 2017 14:38:08 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-05/</guid>
+      <description>看了  Debugging an evil Go runtime bug
+从内存错误到内核和GCC，找到一个Go的bug。
+gcc的stack check会检查栈指针前的4k，这个检查是用or 0实现的，但不是原子性的， 有竞态，而Go分配的栈太小，竞态发送的时候Go的运行时就被影响了。
+GRUB可以屏蔽内存（BADRAM），Windows bcd有类似的功能。
+ Rocket - A Rust game running on WASM
+在wasm可以调用JS，可以把核心的游戏逻辑放在rust/wasm实现.
+ The Rise of Rust in Dev/Ops 
+ Using Rust in Mercurial
+越来越多的Rust。
+ Password hashing theory
+易懂的密码哈希介绍，比其他好的是提到了Keyed hashes，密码存储泄漏但是密钥没泄漏的情况下，可以更换密钥。
+ Dropbox是如何安全地存储用户密码的
+密码 -&amp;gt; SHA512到固定512字节长度 -&amp;gt; bcrypt（cost factor = 10）-&amp;gt; AES256加密。
+  看不懂  GDPR – A Practical Guide For Developers
+欧洲的数据保护规定，很多关于用户数据的要求，导出、删除、加密等等。
+ Erlang Garbage Collector</description>
+    </item>
+    
+    <item>
+      <title>2017-12-04</title>
+      <link>https://oraoto.github.io/daily/posts/2017-12-04/</link>
+      <pubDate>Mon, 04 Dec 2017 12:18:12 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-12-04/</guid>
+      <description>看了  SQL in CockroachDB: Mapping Table Data to Key-Value Storage
+用KV store作为SQL存储引擎，范围查询、索引都可以做。InnoDB、Sqlite4也是KV store。
+ Introduction to the Zig Programming Language
+可以方便调用C和被C调用，支持Maybe类型，error和defer的处理也比Go好。
+ Executing Parallel Statements to Improve Performance
+扩展SQL语法，用RETURNING NOTHING表示不返回结果，语句会异步执行，也就可以和其他语句并发， 加上并发语句间的依赖分析，可以避免不正确的并发，30%的性能提升。
+ Reinventing the FPGA Programming Wheel
+用FPGA加速超算和数据中心是未来，甚至hardware as a service
+ Reflecting on Haskell in 2017
+Haskell 2017年回顾
+ Getting started with Icarus Verilog on Windows
+ How MAC Address Randomization Works on Windows 10
+Win10的MAC地址随机化：
+address = SHA-256(SSID, real MAC address, connectionId, secret)  但是在WiFi frames里的序列号没重置，HotSpot也是直接发真实MAC。</description>
+    </item>
+    
+    <item>
+      <title>2017-11-29</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-29/</link>
+      <pubDate>Wed, 29 Nov 2017 10:39:46 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-29/</guid>
+      <description> 看了  Why cgo&amp;rsquo;s performance is so slow? is there something wrong with my testing code?
+Cgo在一个独立的线程里跑，有个传统的栈（不是go的栈），调用C库的时候还可以先用C封装，减少go到c的调用次数。
+ bject-Relational Mapping is the Vietnam of Computer Science
+ 关于写代码二三事
+  看不懂  A Library of Parallel Algorithms
+用NESL语言写的并行算法。快排看起来和普通的快排没有区别……
+ The Poor Man&amp;rsquo;s 3D Camera
+游戏中的摄像头控制。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-27</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-27/</link>
+      <pubDate>Mon, 27 Nov 2017 13:11:18 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-27/</guid>
+      <description>看了  linux死锁检测的一种思路 
+构建有向图，检测环。如果能不重新编译程序就好了。
+ 如何使用strace+pstack利器分析程序性能
+ The hidden #pragma&amp;rsquo;s of Go
+Go支持的几个pragma，很底层的优化会用。
+ Writing fast and safe native Node.js modules with Rust
+用Rust写Node模块，可以直接用c ffi或者neon.
+顺便发现了Node文档里的一个图：
+┌─────────────────────────────────────────────────────────────────────────────────┐ │ href │ ├──────────┬┬───────────┬─────────────────────┬───────────────────────────┬───────┤ │ protocol ││ auth │ host │ path │ hash │ │ ││ ├──────────────┬──────┼──────────┬────────────────┤ │ │ ││ │ hostname │ port │ pathname │ search │ │ │ ││ │ │ │ ├─┬──────────────┤ │ │ ││ │ │ │ │ │ query │ │ &amp;quot; http: // user:pass @ sub.</description>
+    </item>
+    
+    <item>
+      <title>2017-11-24</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-24/</link>
+      <pubDate>Fri, 24 Nov 2017 12:10:45 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-24/</guid>
+      <description> 看了  Node.js 性能调优之内存篇(一)——gcore+llnode llnode for Node.js Memory Leak Analysis Advances in core-dump debugging for Node.js Exploring Node.js core dumps using the llnode plugin for lldb.
+装了lldb 3.4，编译了llnode，然而v8堆栈看不懂，findjsobjects没内容……
+ PingCAP Go in TiDB
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-23</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-23/</link>
+      <pubDate>Thu, 23 Nov 2017 10:07:19 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-23/</guid>
+      <description> 看了  Fix PHP White Screen of Death
+xdebug.force_display_errors = 1 xdebug.scream = 1  Low Hanging Fruit of Programming Language Design 
+Github上很多代码都是重复的（70%），其中很大部分是生成的代码，编程语言设计可以把代码生成考虑进去。
+ Recursive Filesystem Entries
+改FAT的数据，实现无限循环数据。
+ Accelerating QEMU on Windows with HAXM
+HAXM开源了，QEMU可以用硬件加速了，可惜在用Hyper-V，看来要dual boot了。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-22</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-22/</link>
+      <pubDate>Wed, 22 Nov 2017 16:21:56 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-22/</guid>
+      <description> 看了  The Cost and Complexity of Cgo
+Cgo调用有一定的性能消耗，如果C代码工作量够，这一点消耗通常是值的，但是内存管理、Goroutine、构建、调试都变复杂了。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-21</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-21/</link>
+      <pubDate>Tue, 21 Nov 2017 10:07:20 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-21/</guid>
+      <description>看了  Rustc performance data
+Rust编译器的性能变化。
+ Refactor type memory layouts and ABIs, to be more general and easier to optimize.
+优化Rust数据类型的内存布局，例如Option&amp;lt;Option&amp;lt;bool&amp;gt;&amp;gt;可以只用1字节。
+ Haskell equality table
+哈哈，&amp;quot;&amp;quot; == []，没什么意外的东西。
+ The Seven Myths of Erlang Performance
+ tail-recursive不一定比body-recursive快 BEAM是一个基于寄存器的threaded-code interpreter  The Road to 2 Million Websocket Connections in Phoenix
+两百万WebSocket连接，用45台Tsung客户端，1台128G服务端做测试。
+ Shorthand comparisons in PHP 
+?:和??。
+ State of GraphQL PHP libraries and Symfony integrations in 2017</description>
+    </item>
+    
+    <item>
+      <title>2017-11-20</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-20/</link>
+      <pubDate>Mon, 20 Nov 2017 13:45:05 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-20/</guid>
+      <description> 看了  Profiling Go Profiling Go Applications in Production Profiling Go programs with pprof Package pprof Profiling Go Programs
+一系列Go profiling文章，Go的runtime自带profiling支持。
+ FxCop
+.Net的静态分析工具。
+ List of Big-O for PHP functions
+array_key_exists 是O(N)的？
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-16</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-16/</link>
+      <pubDate>Thu, 16 Nov 2017 10:06:56 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-16/</guid>
+      <description> 看了  Code together in real time with Teletype for Atom
+用CRDT实现，WebRTC传输数据。
+ How to use SVG as a Placeholder, and Other Image Loading Techniques
+用SVG做图片占位，效果很好看。
+ How Discord Resizes 150 Million Images Every Day with Go and C++
+Go封装OpenCV做图片缩略（惊）。
+  看不懂  Concise electronics for geeks
+简明电子电路，还有一些参考书。
+ Understanding LSTM and its diagrams
+不理解LSTM。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-15</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-15/</link>
+      <pubDate>Wed, 15 Nov 2017 12:05:09 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-15/</guid>
+      <description> 看了  Rust mpsc::Sender cannot be shared between threads?
+mpsc::Sender没实现Sync，不能直接被多个线程共享，但是实现了Send，就可以在线程间传递，所以可以先clone再给线程。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-14</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-14/</link>
+      <pubDate>Tue, 14 Nov 2017 12:42:15 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-14/</guid>
+      <description> 看了  Rayon: Data Parallelism for Fun and Profit — Nicholas Matsakis
+Parallel iterators -&amp;gt; join -&amp;gt; work stealing thread pool
+ Rob Pike - &amp;lsquo;Concurrency Is Not Parallelism&amp;rsquo;
+  协程  Goroutine 浅析 为什么觉得协程是趋势？ 编程珠玑番外篇-Q 协程的历史，现在和未来  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-11</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-11/</link>
+      <pubDate>Sat, 11 Nov 2017 10:09:43 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-11/</guid>
+      <description>看了  Rust Container Cheat Sheet
+Rust各种容器
+ How and when to align to cache line size?
+避免不同核心修改不同字段时bounce the cache line，导致false sharing。
+ WebGL + GPU = Amazing Results!
+WebGL介绍。
+ One year without -m
+不用git commit -m，写有意义的commit message。
+ Pretty print curl -i
+-D重定向curl输出的header，或者解析。
+ Your unit test methods need docblocks too
+单元测试也写注释。
+ Displaying errors in Expressive with Twig
+Exception的getTraceAsString和getPrevious方法，Twig里的循环还挺有趣的。
+ Aspect-Oriented Programming in PHP with Go!</description>
+    </item>
+    
+    <item>
+      <title>2017-11-10</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-10/</link>
+      <pubDate>Fri, 10 Nov 2017 12:40:09 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-10/</guid>
+      <description>看了  Six programming paradigms that will change how you think about coding
+六种编程范式：默认并发、依赖类型、连接式、声明式、符号式、基于知识，很多链接。
+ Handling Global Data in PHP Web Applications 
+全局数据的替代方案：静态类、单例、Registry、依赖注入（赢了）
+ Using Consul for Health Checks with ASP.NET Core
+用Consul做健康检查，应用开启时注册，设置检测方式，关闭时注销
+ Don Jayamanne, creator of the Python extension for Visual Studio Code, joins Microsoft
+VSCode的Python扩展的作者进微软了。
+  看不懂  Coroutines and Reference Parameters
+C++的coroutine
+  Memory Order  The Purpose of memory_order_consume in C++11</description>
+    </item>
+    
+    <item>
+      <title>2017-11-09</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-09/</link>
+      <pubDate>Thu, 09 Nov 2017 10:26:26 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-09/</guid>
+      <description> 看了  Compiler Explorer
+能对比各种C++/Rust/Haskell/Go/Swift/D/ispc编译器的输出。
+ Redis Streams and the Unified Log
+Redis 4增加stream类型，加上aof做持久化可以作为Kafka的简易替代。
+ Header files for x86 SIMD intrinsics
+MSVC用intrin.h，其他用x86intrin.h
+  看不懂  A DoS Attack against the C# Compiler
+可以指数级地生成类型。
+ x86 Instruction Set Reference
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-08</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-08/</link>
+      <pubDate>Wed, 08 Nov 2017 11:18:40 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-08/</guid>
+      <description>看了  The Magic Behind Async PHP
+事件循环。
+ 说明 · Neilpang/acme.sh Wiki
+简单易用的letsencrypt客户端。
+ Choose The Right Language To Save The Planet
+拯救世界，先选一门高效的编程语言，减少电力消耗……
+ Introducing Faktory
+语言无关的分布式后台作业系统，用RocksDB存放队列和任务，有Web界面，接口也很简单，sidekiq作者出品。
+ cli.fyi
+命令行小工具，邮件地址验证挺好。
+ Rust Static Assertions
+Rust会在编译器对常量进行求值，如果usize类型overflow了就会出warning（加#[deny(const_err)]变错误），从而实现static assertions.
+ Phi node 是如何实现它的功能的？
+ Static single assignment form
+ What exactly PHI instruction does and how to use it in LLVM
+Phi和SSA简介。
+  看不懂  Rust your ARM microcontroller!
+在ARM上跑Rust，</description>
+    </item>
+    
+    <item>
+      <title>2017-11-07</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-07/</link>
+      <pubDate>Tue, 07 Nov 2017 10:45:05 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-07/</guid>
+      <description>看了  MINIX — The most popular OS in the world, thanks to Intel 
+IME里跑的是MINIX，还在Ring -3。
+ You Shouldn’t Use Faker (or other test randomization libraries)
+完全随机生成测试数据，可能导致测试随机出错，然后被忽略。
+ Server-Side Rendering With Laravel &amp;amp; Vue.js 2.5
+用php-v8js做SSR。
+  看不懂  The Amazing $1 Microcontroller
+详细对比便宜的微处理器对比。
+  TIL  LLVM IR生成iaca标记：
+start: tail call void asm sideeffect &amp;quot;.byte 0xbb, 0x6f, 0, 0, 0, 0x64, 0x67, 0x90&amp;quot;,&amp;quot;&amp;quot;() end: tail call void asm sideeffect &amp;quot;.</description>
+    </item>
+    
+    <item>
+      <title>2017-11-06</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-06/</link>
+      <pubDate>Mon, 06 Nov 2017 10:13:36 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-06/</guid>
+      <description>看了  Corestart 2.0: What&amp;rsquo;s new for performance in .NET Core 2.0
+.Net Core的性能优化，简单来说什么都快了。
+ 7 Reasons Why Your Staging Environment Sucks
+预生产环境要和生成环境的架构相同（性能配置可不同），持续运行不要关闭，必须监控，使用真实数据。
+ MySQL datamasking using ProxySQL
+用ProxySQL对数据去敏，query_rules里用正则做匹配，看起来有点弱。
+ PHP-FPM 7.3 Docker Image based on Alpine and Debian
+更小的PHP-FPM Docker镜像，Readme有一节关于Docker的UID安全的方案，为啥不用userns-remap ?
+ Antimony: a real time distributed stream processing system
+用Rust实现分布式实时流处理系统。
+  看不懂  The Global Heatmap, Now 6x Hotter
+热力图。
+  TIL  wget默认根据Last-Modified设置文件的时间，可用&amp;rsquo;&amp;ndash;no-use-server-timestamps&amp;rsquo;使用时间下载时间。 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem@LongPathsEnabled设为1，可移除MAX_PATH限制。组策略也可以Enable Win32 long paths，\系统\文件系统\启用 Win32 长路径。还有在程序中声明才行，见.</description>
+    </item>
+    
+    <item>
+      <title>2017-11-02</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-02/</link>
+      <pubDate>Thu, 02 Nov 2017 14:09:00 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-02/</guid>
+      <description> 看了  Getting started with rust-toolset
+红帽开始支持Rust了。
+ Obtaining and using Microsoft&amp;rsquo;s link.exe on Linux+Wine with Rust
+下载link，然后在wine里跑！
+ Code Generation on .NET
+.NET代码生成方案（Expression Trees，Reflection.Emit， Roslyn）对比。
+  看不懂  Disclosure: WordPress WPDB SQL Injection - Technical 
+还是用prepared statement好，不要手撸prepare。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-11-01</title>
+      <link>https://oraoto.github.io/daily/posts/2017-11-01/</link>
+      <pubDate>Wed, 01 Nov 2017 10:22:28 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-11-01/</guid>
+      <description> 看了  What are the Most Disliked Programming Languages? 
+Perl、Perl、Delphi、 VBA、PHP、Objective-C、Coffeescript、Ruby。Ruby居然这么前。
+ Announcing TypeScript 2.6
+亮点好像在2.6 rc就看完了。
+ Rust RFCs
+已经通过了的Rust RFC集合。
+ How to get started with the LLVM C API 
+LLVM的C接口入门。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-30</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-30/</link>
+      <pubDate>Mon, 30 Oct 2017 10:34:46 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-30/</guid>
+      <description>Fun facts about Rust&amp;rsquo;s growing popularity
+用数字说明Rust越来越流行了。
+ Splitting Strings
+Ruby的split把字符串看作是个记录（record），设计来源于AWK。
+ Near Future of Programming Languages 
+近未来的编程语言展望，模块系统、代数数据类型、函数式运行时、Effect系统、依赖类型、形式化方法、网络计算
+ 10 Methods to Bypass Cross Site Request Forgery (CSRF)
+像样的框架都不会有这些问题。
+ Debugging in 2017 with Node.js
+ process._debugProcess(id)，可以对其他进程开启debug --trace-events-enabled  Git commit message templates
+git config --global core.editor &amp;quot;code --wait&amp;quot;
+  看不懂  Introducing Miscreant: a multi-language misuse resistant encryption library 
+防止nonce reuse的加密算法。
+ The often-overlooked random forest kernel</description>
+    </item>
+    
+    <item>
+      <title>2017-10-28</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-28/</link>
+      <pubDate>Sat, 28 Oct 2017 12:34:20 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-28/</guid>
+      <description>IBM scientists say radical new ‘in-memory’ computing architecture will speed up computers by 200 times
+现在的内存都只做数据存储，CPU从内存里读数据、计算然后写回内存，这个过程里读写会成为瓶颈，IBM新开发的内存支持计算，CPU可以发控制命令给内存让内存直接进行计算，低功耗、高密度、高并行。
+ 配置了最大连接数 65535，但是/etc/rc.local 里的没生效
+知道了systemctl edit和LimitNOFILE，/etc/security/limits.conf只在“登录”执行。
+ 2017 非标准 PHP 框架性能测试比较
+不测都知道Laravel最慢。
+ How to Build a Kubernetes Cluster with ARM Raspberry Pi then run .NET Core on OpenFaas
+用 Raspberry Pi搭Kubernetes集群，国内网络是坑。
+ Continuous Performance Monitoring for PHP - The tale of Blackfire at trivago
+把Blackfire集成到CI中。
+ What did Alan Kay mean by, &amp;ldquo;Lisp is the greatest single programming language ever designed&amp;rdquo;?</description>
+    </item>
+    
+    <item>
+      <title>2017-10-27</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-27/</link>
+      <pubDate>Fri, 27 Oct 2017 18:56:46 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-27/</guid>
+      <description> 看了  Why we used Pony to write Wallaroo
+传说Pony高并发、低延迟还很安全。
+ Stars Finale
+用Pony写OpenGL。
+ You Should Learn Regex
+一些正则例子。
+ Microsoft Using Chromium On Android Is Bad For The Web
+Chromium又赢了，引擎多样性已不存在。
+ How does the PHP Realpath Cache work and how to configure it?
+在各种file:// stream wrapper都会用，而且在PHP 7.2之后默认4M内存（每个进程）。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-26</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-26/</link>
+      <pubDate>Thu, 26 Oct 2017 10:12:49 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-26/</guid>
+      <description>看了  PHP Versions Used in Commercial Projects in 2017
+商业项目中PHP7使用已经接近30%。
+ Zulip 1.7: Open source team chat
+开源的Slack替代，Python 3写的。
+ Food for Thought: WordPress Plugin in C#
+通过一个包装了PHP运行时信息的Context对象，可以在C#调用PHP，和把委托当传给PHP。
+ CFV: New Project: ZGC
+Oracle开发的新GC，为低延迟和超大堆优化，TB级的堆，GC暂停不超过10ms，吞吐比G1最多少15%。
+ ROCA: Vulnerable RSA generation (CVE-2017-15361)
+特定的RSA key有漏洞。
+ Thoughts of a Rustacean learning Go
+Rust用户学Go。
+ Why does one NGINX worker take all the load?
+3种设计TCP服务器方式：
+1. 单个listen socket，单个工作进程 2. 单个listen socket，多个工作进程 3. 多个listen socket（SO_REUSEPORT），多个工作进程  其中第二种可以：</description>
+    </item>
+    
+    <item>
+      <title>2017-10-24</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-24/</link>
+      <pubDate>Tue, 24 Oct 2017 10:28:32 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-24/</guid>
+      <description> 看了  .NET Core Performance Profiling with Intel® VTune™ Amplifier 2018
+VTune支持.Net了，强。
+ Halide Talk
+把图形处理算法的算法和调度分开，更容易尝试不同的调度方式和实现跨阶段的优化。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-18</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-18/</link>
+      <pubDate>Wed, 18 Oct 2017 09:55:27 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-18/</guid>
+      <description> Analyzing Docker Container Performance With Native Tools
+分析Docker容器性能，可用docker stats、Docker的Rest接口和cgroups文件。
+ When 500% Faster is Garbage
+hapi的rps提高了5倍，但是单个请求也只快了0.234ms，
+ Fluent Interfaces are Evil
+Fluent接口适用于Builder。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-13</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-13/</link>
+      <pubDate>Fri, 13 Oct 2017 10:06:35 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-13/</guid>
+      <description> Announcing TypeScript 2.6 RC
+函数参数终于是逆变的了，以前的日子是怎么过的……
+ Announcing Rust 1.21
+Rust 1.21，随意已经在于nightly的1.22了。
+ Debug Rust on Windows with Visual Studio Code and the MSVC Debugger
+ Using Rust in Windows
+在Windows下进行Rust开发，可以用VS Code调试，还有配置sourceFileMap。
+ RustConf 2017 - Type System Tips for the Real World by Sean Griffin
+零字节的类型可以做很多优化。trait object会阻止monomorphisation，干掉很多优化。Diesel的优化例子很厉害。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-12</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-12/</link>
+      <pubDate>Thu, 12 Oct 2017 10:26:35 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-12/</guid>
+      <description> What are the differences between Rust&amp;rsquo;s String and str? String vs &amp;amp;str in Rust functions
+String和str的区别。
+ Rust 中文 Wiki - Rust-Lifetime
+Lifetime很复杂。
+ Rust: The ? operator
+ Learning to &amp;lsquo;try!&amp;rsquo; things in Rust
+Rust的错误处理。
+ Squeezing Rust into production: Part 2
+把Rust用在生产环境，安全，性能好，学习成本高。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-11</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-11/</link>
+      <pubDate>Wed, 11 Oct 2017 10:19:55 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-11/</guid>
+      <description>看了  How to resize root LVM partition in Fedora without LiveCD or Rebooting
+LVM扩容。
+pvresize /dev/sda2 lvextend /dev/mapper/fedora-root -l+100%FREE xfs_growfs /dev/mapper/root # ext3/4 -&amp;gt; resize2fs  Finding &amp;amp; patching a bug in php-src
+为PHP提交代码，发现bug，修复，写测试，发PR。
+ GoogleTechTalks: The Rust Programming Language
+通过禁止Aliasing和Mutation同时出现来防止data race。
+ Announcing UWP Support for .NET Standard 2.0
+然而已经没WP了。
+ PHP-FPM tuning: Using ‘pm static’ for max performance
+通过pm = static获得最大性能。
+ Effective Shell Part 2 - Become a Clipboard Gymnast</description>
+    </item>
+    
+    <item>
+      <title>2017-10-10</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-10/</link>
+      <pubDate>Tue, 10 Oct 2017 09:46:27 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-10/</guid>
+      <description> 看了  Zero-cost futures in Rust
+可以把promise编译成状态机+回调。
+ Is it all PHP OPCache&amp;rsquo;s fault?
+include/require会用realpath_cache缓存，使用软连接的时候，缓存没更新就会访问到旧文件。
+ The Absurdly Underestimated Dangers of CSV Injection
+CSV注入，Excel会解析解析内容（Excel会出警告），从而执行命令，。
+ The Neural Network in Your CPU
+CPU用单层感知器进行分支预测。
+ BotMan 2.0 PHP Chatbot Framework
+聊天机器人框架，支持很多国外的聊天工具。
+ 10 Linux Commands Every Developer Should Know
+知道了pidof、nethogs、dialog。
+  看不懂  Monoidal Parsing—Edward Kmett
+把抽象代数用在编程。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-10-09</title>
+      <link>https://oraoto.github.io/daily/posts/2017-10-09/</link>
+      <pubDate>Fri, 29 Sep 2017 13:23:48 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-10-09/</guid>
+      <description> 看了  Linux Sucks&amp;hellip; For the Last Time
+从历史中学习，Linux的用户环境依旧坑。
+ Two fantastic PHP testing tools (Kahlan and Phony) just got new major versions
+PHP测试工具。
+  看不懂  CppCon 2017: Toby Allsopp “Coroutines: what can&amp;rsquo;t they do?”
+C++的Coroutine，编译器会做语法糖转换，扩展点很方便，也许做到Haskell的do语法。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-27</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-27/</link>
+      <pubDate>Wed, 27 Sep 2017 13:24:34 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-27/</guid>
+      <description> 看了  Calling Futhark from C and Haskell
+Futhark可以生成C接口，然后在C和其他语言里调用。
+ Upcoming features and enhancements in C# 7.2
+厉害了，private protected和只读引用。
+ How the RLS works
+Rust Language Server和Language Server Protocol的介绍。
+ MapReduce: A major step backwards
+08年旧文，MR不好的地方：缺少DBMS的功能，概念也不新，实现也一般，编程模式甚至是大规模数据应用的退步。
+批评不到点子上。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-26</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-26/</link>
+      <pubDate>Tue, 26 Sep 2017 11:58:28 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-26/</guid>
+      <description>看了  drupol/dynamicobjects
+通过静态数组保存方法和属性，然后通__call和bindTo调用，实现动态给类添加方法和属性。
+ It&amp;rsquo;s Windows 3.1 All Over Again
+真标题是Why Reactive FP sucks。
+阻塞不是问题，进程消耗大才是（所以Erlang、Haskell的轻量级进程给力）。
+ Goodbye controllers, hello request handlers
+只有一个方法的“控制器”，区别不大。
+ The SQL I Love &amp;lt;3. Efficient pagination of a table with 100M records
+MySQL分页优化，直接排序然后limit offset是不行的，可以通过其他条件加个where去掉上一页的范围再limit offset，前提是有序。
+ We need tool support for keyset pagination
+正确地分页。
+ Gap Analysis to find missing values in a sequence
+用SQL查连续和不连续的数据，有意思。
+ MySQL 8.0 RC1 – Highlights
+居然有Document store了，CTE和Window Function也很有用。</description>
+    </item>
+    
+    <item>
+      <title>2017-09-25</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-25/</link>
+      <pubDate>Mon, 25 Sep 2017 13:13:15 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-25/</guid>
+      <description> 看了  Elm in Production: Surprises &amp;amp; Pain Points
+处理DOM、事件和CSS Module比较麻烦，但是可以做。
+ Monitoring Cloudflare&amp;rsquo;s planet-scale edge network with Prometheus
+Cloudflare如何用Promethues做监控。
+  看不懂  Godot 3 Renderer Design Explained  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-24</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-24/</link>
+      <pubDate>Sun, 24 Sep 2017 11:30:10 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-24/</guid>
+      <description>看了  Elm In Production: 25,000 Lines Later
+把Elm用在生成环境的勇士，总体来说体验很好。
+ Laravel、PHPer 面试可能会遇到的问题及答案 
+补些基础。
+ 10 hidden Hyper-V features you should know about!
+一些有用的Hyper-V特性，VMConnect Enhanced Session Mode、NAT有用。
+ Introducing The Pikachu Programming Language – A Programming Language Made For Pikachus
+皮卡丘编程语言，声称要把皮卡丘从奴役中解放出来，给它们做编程工作，其实是个阴谋。
+ Top 10 things to monitor on your MySQL Server
+学到了full table scans的计算。
+((Handler_read_rnd_next + Handler_read_rnd) / (Handler_read_rnd_next + Handler_read_rnd + Handler_read_first + Handler_read_next + Handler_read_key + Handler_read_prev))</description>
+    </item>
+    
+    <item>
+      <title>2017-09-22</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-22/</link>
+      <pubDate>Fri, 22 Sep 2017 10:35:46 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-22/</guid>
+      <description> 看了  New in postgres 10
+Logical Replication很有用。
+ Existential serialisation
+通过StaticPtr序列化和反序列化Existential数据。StaticPtr可以指向代码指针，然后被序列化。
+相关文档：Static pointers and serialisation
+ An introduction to reflex
+FPR，Event是离散的，Behavior是连续的，Behavior可以表示状态，用Event构建和采样Behavior。
+ From PHP to JavaScript with Node.js
+发现了Apigility和Epilogue。
+ 在 SSD 相对在服务器端普及的今天，为什么大部分数据库还是用 B/B+ 树实现的？
+SSD延迟差DRAM两个数量级，按block（一般512B）读取，B/B+树还适用。
+ async/await异步模型是否优于stackful coroutine模型？
+ Testing without compromise using InternalsVisibleTo
+ Nature-inspired algorithms : Lars Marius Garshol
+自然启发的算法，
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-21</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-21/</link>
+      <pubDate>Thu, 21 Sep 2017 14:01:15 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-21/</guid>
+      <description> 看了  2017阿里云网络技术高峰论坛-云栖社区
+网络增强实例很厉害的感觉，然而我们用不上。
+阿里云负载均衡是LVS+Tengine，做了很多性能优化。Tengine更新配置不影响业务是怎样实现的呢？
+ BetterReflection version 2.0.0 released
+不通过加载（require）文件实现反射。
+ How to containerize your PHP/NGINX docker project properly
+很原始的Docker使用方式，不推荐。
+ Open Sourcing Liberty
+IBM开源了Liberty，现代化的Java微服务运行时。
+ Worst Computer Bugs in History: Race conditions in Therac-25
+医疗事故。
+ Rethinking Inheritance
+DOJO 2组件系统使用继承的分析。
+ git push &amp;ndash;force and how to deal with it
+--force-with-lease，如果你的不是最新的就不能push。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-20</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-20/</link>
+      <pubDate>Wed, 20 Sep 2017 10:30:10 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-20/</guid>
+      <description> 看了  Efficient Default Property Values in TypeScript
+JS原型链的应用，在静态成员里执行IFF，把默认值写到prototype，不适用于数组和对象。
+ Gas Pump Skimmers
+硬件的中间人攻击。
+ Optionsbleed - HTTP OPTIONS method can leak Apache&amp;rsquo;s server memory
+Apache的Limit作用在单个HTTP方法后，OPTIONS请求会在Allow头泄露内存。
+ Fighting Technical Debt with NDepend
+ Type Systems for JavaScript Flow and TypeScript
+TypeScript和Flow对比，功能相似，Flow更注重正确性，TS更关注易用和工具。
+ WebAssembly与程序编译
+一些基础知识。
+ 你所不知道的HostOnly Cookie
+在Cookie中不包含Domain属性，或者Domain属性为空，或者Domain属性不合法时，Cookie为HostOnly Cookie。只有当前域名与该Cookie的Domain属性完全相等才可以进入后续流程（子域名不行）。Chrome在非HostOnly Cookie的Domain前面多加了一个英文句。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-18</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-18/</link>
+      <pubDate>Mon, 18 Sep 2017 14:05:09 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-18/</guid>
+      <description> 看了  Kubernetes in 5 mins
+5分钟介绍Kubernetes。
+ Java Reflection, 1000x Faster
+优化反射性能：缓存、LambdaMetafactory。
+最快的是用annotation，编译期生成代码，去掉反射。
+ 如何看待百度要求内部全面停止使用 React / React Native?
+React药丸系列。
+ 有哪些软件相关的公司，开发流程比较规范？
+我们还停留在手工测试的阶段，流程就是需求-&amp;gt;开发-&amp;gt;测试-&amp;gt;验收，自动化测试、Code Review？不存在的。
+ Chrome DevTools Protocol Viewer
+看了一下文档，准备用Chrome headless截图。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-15</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-15/</link>
+      <pubDate>Fri, 15 Sep 2017 13:37:28 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-15/</guid>
+      <description> 看了  MonadIO Considered Harmful
+MonadIO太宽泛了，把IO操作细分（例如MonadFiles、MonadDB）可以让代码意图更清晰。
+类似的：Delimiting the IO monad。
+ Leave your OS at home: the rise of library operating systems
+数据中心里15~20%的CPU被用在内核了，需要更轻量级的OS。传统OS设计要考虑多层的保护、模块化和通用性，这些都会带来一定的消耗。
+ InfluxDB Now Supports Prometheus Remote Read &amp;amp; Write Natively
+Prometheus更适合短时间的监控数据，InfluxDB适合长时间的精度稍低历史数据。现在InfluxDB直接支持了Prometheus的Remote API，Prometheus可以把数据写到InfluxDB，然后在InfluxDB进行查询。
+ Parsing Expression Grammar: A recognition-Based Syntactic Foundation
+CFG用来生成语言。PEG用来识别语言，描述Parser的行为。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-12</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-12/</link>
+      <pubDate>Tue, 12 Sep 2017 11:44:08 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-12/</guid>
+      <description> 看了  Story of retry
+灵活的重试策略。
+ Doing CQRS + Event Sourcing without building a spaceship
+介绍CQRS，用不同的模型进行读写，redux借鉴CQRS和Event Sourcing，然后又被PHP借鉴。
+ Why Apache Benchmark Is Not Enough
+ ab只能测试简单的、固定的路径，这样会导致缓存命中率比真实环境高。 ab只能测单个路径，现实是有多个使用场景，而且不同使用场景所占比例不同 ab/siege难定义复杂的使用场景 平均响应时间和rps不是好的测量指标，正常的响应时间不是正态分布的，要用百分数  这是个JMeter课程广告。
+ Server Naming Conventions and Best Practices
+服务器命名，现在我们还是ecs-xx的方式。
+ Deploying a PHP application to Cloud Foundry
+ Using PostgreSQL with PHP in Cloud Foundry
+在Cloud Foundry部署PHP应用，使用PostgreSQL，想起以前用AppFog的经历。
+ 详细解析PHP mail()函数漏洞利用技巧
+因为mail()通过sendmail程序发邮件，传参要注意。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-09</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-09/</link>
+      <pubDate>Sat, 09 Sep 2017 09:56:48 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-09/</guid>
+      <description>看了  The story of one typo or strtr() replacing wrong characters
+类型转换的问题，布尔值转成字符串时，true转为&amp;rsquo;1&amp;rsquo;，false转为&amp;rdquo;。
+ Welcome to the New Blog Template for ASP.NET Developers
+Razor Page示例。
+ Getting Started with Windows Containers
+不如用Linux。
+ Changes to NuGet.org service management, and performance improvements in China
+NuGet.org交给微软管理，墙内CDN加速，比只有镜像还要改配置的某些软件仓库高到不知哪里去了。
+ Game Engine Black Book Postmortem
+ Consul + fabio 实现自动服务发现、负载均衡
+ Docker Workflow（四）：服务发现与负载均衡
+ Service discovery, configuration management with Consul
+ Configuration management with Consul</description>
+    </item>
+    
+    <item>
+      <title>2017-09-08</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-08/</link>
+      <pubDate>Fri, 08 Sep 2017 12:09:43 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-08/</guid>
+      <description> 看了  Parsing expressions by precedence climbing
+一种解析表达式的算法。
+ 谈API网关的背景、架构以及落地方案
+ 微服务网关解决方案调研和使用总结 
+ 为什么微服务需要API网关？
+ 谈谈 API 网关
+ 使用API网关构建微服务
+一些关于API网关的文章。
+  看不懂  Announcing Squeal
+一个Haskell的PostgreSQL库，用到各种现代扩展。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-05</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-05/</link>
+      <pubDate>Tue, 05 Sep 2017 18:17:32 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-05/</guid>
+      <description> 看了  How I shrunk a Docker image by 98.8% – featuring fanotify
+通过fanotify跟踪程序需要的文件，创建更小的容器镜像，能自动化一定就好了。
+ Docker for your users - Introducing user namespace
+User命名空间，实现把容器内的用户映射到容器外的另一个用户，提高容器的安全性。
+ 理解Docker（3）：Docker 使用 Linux namespace 隔离容器的运行环境
+了解更多命名空间选项。
+ THT | Programming Language for the Web
+编译到PHP的语言，类JS语法，自带框架（干嘛不直接用PHP The Good Parts）。
+ Building Microservices? Here is what you should know
+构建微服务前需要了解的技术挑战。
+  看不懂  Analyzing Programs with Z3
+用Z3分析程序。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-04</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-04/</link>
+      <pubDate>Mon, 04 Sep 2017 20:49:35 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-04/</guid>
+      <description> 看了  Using Hugo with Travis CI on GitHub Pages
+根据这篇文章配置了Travis CI。
+ Dagger - dependency injection with no runtime overhead
+依赖注入，通过在编译器生成代码避免运行时消耗。
+ Systemd-nspawn
+Systemd自带的轻量级容器方案，但是用起来也没想象中容易。
+ PHP CI with Jenkins and Docker (Part 1)
+用Docker部署Jenkins。
+ Static Binaries for Haskell: A Convoluted Approach
+静态Haskell程序的艰苦历程。
+ Use multi-stage builds
+Dockerfile支持多个FROM，后面的步骤可以使用前面的文件。
+ The Mathematics of Machine Learnin
+机器学习需要的数学知识：线代、概率论、统计、微积分、计算复杂度，还有推荐了一些课程。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-03</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-03/</link>
+      <pubDate>Sun, 03 Sep 2017 18:29:35 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-03/</guid>
+      <description> 看了  Go PHP 7.1
+一个即将使用PHP 7.1的框架列表和时间表，没啥用。
+ Perl as PID 1 under Docker
+原来内核对PID为1的进程有特殊处理，如果它没有自己设置signal handler就收不到信号。之前用PHP也发现结束要等一段时间，但是没有深究。解决方法是设置一个signal handler或用dumb-init或用docker的--init。
+ 奇技淫巧学 V8 之六，字符串在 V8 内的表达
+RT
+ Let&amp;rsquo;s make a GTK Video Player with Haskell
+用Haskell+GTK写视频播放器，用FP写GUI是什么体验？还是事件+回调。
+ Getting started with Serverless PHP
+介绍Serverless平台OpenWhisk，wsk命令的基本使用，定义一个函数很方便（相对于还要写配置的其他平台来说），就是例子太简单。
+ ReactOS 0.4.6 released
+1千4百万个单元测试，精神可嘉。
+ Node-OS
+基于node.js和npm的操作系统，内核是Linux，但是用户空间的程序都是node.js，所以还能用docker体验一下。
+  看不懂  My Philosophy on Alerting
+一个前谷歌SRE的报警思想体系。
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-09-01</title>
+      <link>https://oraoto.github.io/daily/posts/2017-09-01/</link>
+      <pubDate>Fri, 01 Sep 2017 18:22:48 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-09-01/</guid>
+      <description> 看了  node.js Flame Graphs on Linux
+node加 --perf-basic-prof-only-functions或--perf-basic-prof 选项。在用docker，还在容器里装了perf，exec perf然后docker cp到host再生成火焰图，然而看不懂。
+ Databases and Distributed Deadlocks: A FAQ 
+介绍分布式锁，通过构建有向图然后检测环实现死锁检测，通过pridicate lock 或基于时间戳的事务优先级实现死锁避免。
+ Nanobox: Security Overview
+创建服务器的时候会生成证书，然后网络只nanobox.io访问，新加节点的时候会开放节点间网络访问。默认只读的文件系统很好。
+  看不懂  LogDevice: a distributed data store for logs
+Facebook的分布式日志存储系统
+  </description>
+    </item>
+    
+    <item>
+      <title>2017-08-31</title>
+      <link>https://oraoto.github.io/daily/posts/2017-08-31/</link>
+      <pubDate>Thu, 31 Aug 2017 18:09:41 +0800</pubDate>
+      
+      <guid>https://oraoto.github.io/daily/posts/2017-08-31/</guid>
+      <description>看了  How I replicated an $86 million project in 57 lines of code
+用openalpr识别车牌号码，对国内的车牌基本没用，可能要重新训练。
+ Laravel 5.5 Release Notes
+很多有用的更新，可惜公司大部分被锁定在5.1了，只能在新项目用了。
+ How Not To Sort By Average Rating
+按评分排序，平均分在评分数量少的时候效果不好，用 Lower bound of Wilson score confidence interval for a Bernoulli parameter！
+ CCKiller：Linux轻量级CC攻击防御工具，秒级检查、自动拉黑和释放
+虽然用不上，看看脚本
+ Monitoring Docker services with Prometheus +cAdvisor
+介绍用cAdvisor和Prometheus监控容器，然后直接看cAdvisor文档用pssh部署到一个集群，还是缺动态发现。
+ Please Sir May I Have a Linker?
+04年Joel Spolsky的旧文，介绍linker的用途和吐槽.Net，10几年后的今天.Net Core终于有了官方的Linker（基于Mono Linker）
+ A camera that snaps a GIF and ejects a cartridge that displays it</description>
+    </item>
+    
+  </channel>
+</rss>

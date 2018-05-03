@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='看了  The systems design interview
+ 面试官准备好问题的场景，例如设计有个分布式缓存，给出一些数值，例如用户数、数据量等等，不用太完整 面试者要理清问题的范围，询问更多的数据 面试中把问题分解成子问题 处理其中一个子问题，可以向面试官询问更多信息 面试官深入讨论这个子问题的细节，必要的时候要提供提示 回到第4步，直到时间结束  Notes on Distributed Systems for Young Bloods
+ 分布式系统很难设计，因为它们经常出错 可靠的分布式系统成本要比单机系统大 可靠的、开源的单机系统更常见 协调很难 如果内存住够，问题可能会简单很多 “慢”是最难debug的问题 系统的每个环节都要实现backpressure 系统要部分可用 监控 用百分数衡量性能，不要用平均数 学会评估容量 Feature flags 谨慎选择id空间 利用数据的局部性 不用把缓存数据写回磁盘 计算机吸能再提升 用CAP评价系统 分离出服务  Why inheritance never made any sense Lobster
+继承可以分成3种：
+ 抽象数据类型继承：A和B有完全一样的行为，Liskov替换原则 实现继承：代码重用，A从B得到一些属性然后修改或增加属性 Ontological（本体？）继承：特化，A是B的特例  这三者可能是冲突的，所以不用试图用其中一种来实现其他的。
+ Your domain model is not your object model. Your domain model is not your abstract data type model.'>
+
+<meta property='og:title' content='2018-03-19 • Oraoto'>
+<meta property='og:description' content='看了  The systems design interview
+ 面试官准备好问题的场景，例如设计有个分布式缓存，给出一些数值，例如用户数、数据量等等，不用太完整 面试者要理清问题的范围，询问更多的数据 面试中把问题分解成子问题 处理其中一个子问题，可以向面试官询问更多信息 面试官深入讨论这个子问题的细节，必要的时候要提供提示 回到第4步，直到时间结束  Notes on Distributed Systems for Young Bloods
+ 分布式系统很难设计，因为它们经常出错 可靠的分布式系统成本要比单机系统大 可靠的、开源的单机系统更常见 协调很难 如果内存住够，问题可能会简单很多 “慢”是最难debug的问题 系统的每个环节都要实现backpressure 系统要部分可用 监控 用百分数衡量性能，不要用平均数 学会评估容量 Feature flags 谨慎选择id空间 利用数据的局部性 不用把缓存数据写回磁盘 计算机吸能再提升 用CAP评价系统 分离出服务  Why inheritance never made any sense Lobster
+继承可以分成3种：
+ 抽象数据类型继承：A和B有完全一样的行为，Liskov替换原则 实现继承：代码重用，A从B得到一些属性然后修改或增加属性 Ontological（本体？）继承：特化，A是B的特例  这三者可能是冲突的，所以不用试图用其中一种来实现其他的。
+ Your domain model is not your object model. Your domain model is not your abstract data type model.'>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2018-03-19/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2018-03-19T15:32:36&#43;08:00'/><meta property='article:modified_time' content='2018-03-19T15:32:36&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2018-03-19 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2018-03-19/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2018-03-19</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="http://emauton.org/2018/03/14/the-systems-design-interview/">The systems design interview</a></p>
+
+<ol>
+<li>面试官准备好问题的场景，例如设计有个分布式缓存，给出一些数值，例如用户数、数据量等等，不用太完整</li>
+<li>面试者要理清问题的范围，询问更多的数据</li>
+<li>面试中把问题分解成子问题</li>
+<li>处理其中一个子问题，可以向面试官询问更多信息</li>
+<li>面试官深入讨论这个子问题的细节，必要的时候要提供提示</li>
+<li>回到第4步，直到时间结束</li>
+</ol></li>
+
+<li><p><a href="https://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/">Notes on Distributed Systems for Young Bloods</a></p>
+
+<ul>
+<li>分布式系统很难设计，因为它们经常出错</li>
+<li>可靠的分布式系统成本要比单机系统大</li>
+<li>可靠的、开源的单机系统更常见</li>
+<li>协调很难</li>
+<li>如果内存住够，问题可能会简单很多</li>
+<li>“慢”是最难debug的问题</li>
+<li>系统的每个环节都要实现backpressure</li>
+<li>系统要部分可用</li>
+<li>监控</li>
+<li>用百分数衡量性能，不要用平均数</li>
+<li>学会评估容量</li>
+<li>Feature flags</li>
+<li>谨慎选择id空间</li>
+<li>利用数据的局部性</li>
+<li>不用把缓存数据写回磁盘</li>
+<li>计算机吸能再提升</li>
+<li>用CAP评价系统</li>
+<li>分离出服务</li>
+</ul></li>
+
+<li><p><a href="https://www.sicpers.info/2018/03/why-inheritance-never-made-any-sense/">Why inheritance never made any sense</a> <a href="https://lobste.rs/s/bb2dyo/why_inheritance_never_made_any_sense">Lobster</a></p>
+
+<p>继承可以分成3种：</p>
+
+<ul>
+<li>抽象数据类型继承：A和B有完全一样的行为，Liskov替换原则</li>
+<li>实现继承：代码重用，A从B得到一些属性然后修改或增加属性</li>
+<li>Ontological（本体？）继承：特化，A是B的特例</li>
+</ul>
+
+<p>这三者可能是冲突的，所以不用试图用其中一种来实现其他的。</p>
+
+<blockquote>
+<p>Your domain model is not your object model.
+Your domain model is not your abstract data type model.
+Your object model is not your abstract data type model.</p>
+</blockquote></li>
+
+<li><p><a href="https://medium.com/adyen/updating-a-50-terabyte-postgresql-database-f64384b799e7">Updating a 50 terabyte PostgreSQL database</a></p>
+
+<p>一个升级PostgreSQL集群的方案，停止服务服务，然后升级主节点后用文件系统快照复制到子节点。</p></li>
+
+<li><p><a href="https://elweb.co/the-security-footgun-in-etcd/">The security footgun in etcd</a></p>
+
+<p>etcd默认没开启认证。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2018-01-18/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2018-01-18</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2018-03-20/'>
+        <span class='screen-reader'>Next post: </span>2018-03-20<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+

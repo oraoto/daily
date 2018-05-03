@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content=' 看了  MonadIO Considered Harmful
+MonadIO太宽泛了，把IO操作细分（例如MonadFiles、MonadDB）可以让代码意图更清晰。
+类似的：Delimiting the IO monad。
+ Leave your OS at home: the rise of library operating systems
+数据中心里15~20%的CPU被用在内核了，需要更轻量级的OS。传统OS设计要考虑多层的保护、模块化和通用性，这些都会带来一定的消耗。
+ InfluxDB Now Supports Prometheus Remote Read &amp; Write Natively
+Prometheus更适合短时间的监控数据，InfluxDB适合长时间的精度稍低历史数据。现在InfluxDB直接支持了Prometheus的Remote API，Prometheus可以把数据写到InfluxDB，然后在InfluxDB进行查询。
+ Parsing Expression Grammar: A recognition-Based Syntactic Foundation
+CFG用来生成语言。PEG用来识别语言，描述Parser的行为。
+  '>
+
+<meta property='og:title' content='2017-09-15 • Oraoto'>
+<meta property='og:description' content=' 看了  MonadIO Considered Harmful
+MonadIO太宽泛了，把IO操作细分（例如MonadFiles、MonadDB）可以让代码意图更清晰。
+类似的：Delimiting the IO monad。
+ Leave your OS at home: the rise of library operating systems
+数据中心里15~20%的CPU被用在内核了，需要更轻量级的OS。传统OS设计要考虑多层的保护、模块化和通用性，这些都会带来一定的消耗。
+ InfluxDB Now Supports Prometheus Remote Read &amp; Write Natively
+Prometheus更适合短时间的监控数据，InfluxDB适合长时间的精度稍低历史数据。现在InfluxDB直接支持了Prometheus的Remote API，Prometheus可以把数据写到InfluxDB，然后在InfluxDB进行查询。
+ Parsing Expression Grammar: A recognition-Based Syntactic Foundation
+CFG用来生成语言。PEG用来识别语言，描述Parser的行为。
+  '>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2017-09-15/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-09-15T13:37:28&#43;08:00'/><meta property='article:modified_time' content='2017-09-15T13:37:28&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2017-09-15 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2017-09-15/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2017-09-15</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="http://chrispenner.ca/posts/monadio-considered-harmful">MonadIO Considered Harmful</a></p>
+
+<p>MonadIO太宽泛了，把IO操作细分（例如<code>MonadFiles</code>、<code>MonadDB</code>）可以让代码意图更清晰。</p>
+
+<p>类似的：<a href="https://stackoverflow.com/questions/20318936/delimiting-the-io-monad/20319642#20319642">Delimiting the IO monad</a>。</p></li>
+
+<li><p><a href="https://www.sigarch.org/leave-your-os-at-home-the-rise-of-library-operating-systems/">Leave your OS at home: the rise of library operating systems</a></p>
+
+<p>数据中心里15~20%的CPU被用在内核了，需要更轻量级的OS。传统OS设计要考虑多层的保护、模块化和通用性，这些都会带来一定的消耗。</p></li>
+
+<li><p><a href="https://www.influxdata.com/blog/influxdb-now-supports-prometheus-remote-read-write-natively/">InfluxDB Now Supports Prometheus Remote Read &amp; Write Natively</a></p>
+
+<p>Prometheus更适合短时间的监控数据，InfluxDB适合长时间的精度稍低历史数据。现在InfluxDB直接支持了Prometheus的Remote API，Prometheus可以把数据写到InfluxDB，然后在InfluxDB进行查询。</p></li>
+
+<li><p><a href="http://bford.info/pub/lang/peg-slides/img0.html">Parsing Expression Grammar: A recognition-Based Syntactic Foundation</a></p>
+
+<p>CFG用来生成语言。PEG用来识别语言，描述Parser的行为。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-09-12/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2017-09-12</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-09-18/'>
+        <span class='screen-reader'>Next post: </span>2017-09-18<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+

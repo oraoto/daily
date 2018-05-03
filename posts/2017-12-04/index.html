@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='看了  SQL in CockroachDB: Mapping Table Data to Key-Value Storage
+用KV store作为SQL存储引擎，范围查询、索引都可以做。InnoDB、Sqlite4也是KV store。
+ Introduction to the Zig Programming Language
+可以方便调用C和被C调用，支持Maybe类型，error和defer的处理也比Go好。
+ Executing Parallel Statements to Improve Performance
+扩展SQL语法，用RETURNING NOTHING表示不返回结果，语句会异步执行，也就可以和其他语句并发， 加上并发语句间的依赖分析，可以避免不正确的并发，30%的性能提升。
+ Reinventing the FPGA Programming Wheel
+用FPGA加速超算和数据中心是未来，甚至hardware as a service
+ Reflecting on Haskell in 2017
+Haskell 2017年回顾
+ Getting started with Icarus Verilog on Windows
+ How MAC Address Randomization Works on Windows 10
+Win10的MAC地址随机化：
+address = SHA-256(SSID, real MAC address, connectionId, secret)  但是在WiFi frames里的序列号没重置，HotSpot也是直接发真实MAC。'>
+
+<meta property='og:title' content='2017-12-04 • Oraoto'>
+<meta property='og:description' content='看了  SQL in CockroachDB: Mapping Table Data to Key-Value Storage
+用KV store作为SQL存储引擎，范围查询、索引都可以做。InnoDB、Sqlite4也是KV store。
+ Introduction to the Zig Programming Language
+可以方便调用C和被C调用，支持Maybe类型，error和defer的处理也比Go好。
+ Executing Parallel Statements to Improve Performance
+扩展SQL语法，用RETURNING NOTHING表示不返回结果，语句会异步执行，也就可以和其他语句并发， 加上并发语句间的依赖分析，可以避免不正确的并发，30%的性能提升。
+ Reinventing the FPGA Programming Wheel
+用FPGA加速超算和数据中心是未来，甚至hardware as a service
+ Reflecting on Haskell in 2017
+Haskell 2017年回顾
+ Getting started with Icarus Verilog on Windows
+ How MAC Address Randomization Works on Windows 10
+Win10的MAC地址随机化：
+address = SHA-256(SSID, real MAC address, connectionId, secret)  但是在WiFi frames里的序列号没重置，HotSpot也是直接发真实MAC。'>
+<meta property='og:url' content='https://oraoto.github.io/daily/posts/2017-12-04/'>
+<meta property='og:site_name' content='Oraoto的日常'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:published_time' content='2017-12-04T12:18:12&#43;08:00'/><meta property='article:modified_time' content='2017-12-04T12:18:12&#43;08:00'/>
+
+<meta name="generator" content="Hugo 0.41-DEV" />
+
+  <title>2017-12-04 • Oraoto</title>
+  <link rel='canonical' href='https://oraoto.github.io/daily/posts/2017-12-04/'>
+  <link rel='icon' href='/daily/favicon.ico'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700&subset=latin'>
+<link rel='stylesheet' href='/daily/css/main.67a788c9.css'>
+
+  <link rel='stylesheet' href='/daily/css/custom.css'>
+
+
+
+</head>
+
+
+<body class='page'>
+  <div class='site'>
+    <header id='header' class='header-container'>
+      <div class='site-header'>
+        <nav id='navmenu' aria-label='Main Menu'>
+  <ul class='main-menu'>
+    
+    <li>
+      <a href='/daily/' 
+        
+      >Main</a>
+    </li>
+    
+  </ul>
+</nav>
+
+        <div class='site-info'>
+          
+          <p class='site-title title'>Oraoto的日常</p>
+          
+          <p class='site-description'></p>
+        </div>
+      </div>
+    </header>
+
+
+<main class='main'>
+  <article lang='en' class='entry'>
+    <header class='entry-header'>
+  <div class='entry-info'>
+    <h1 class='entry-title title'>2017-12-04</h1>
+    
+  </div>
+  
+
+
+
+</header>
+
+    <div class='entry-content'>
+  
+
+<h1 id="看了">看了</h1>
+
+<ul>
+<li><p><a href="https://www.cockroachlabs.com/blog/sql-in-cockroachdb-mapping-table-data-to-key-value-storage">SQL in CockroachDB: Mapping Table Data to Key-Value Storage</a></p>
+
+<p>用KV store作为SQL存储引擎，范围查询、索引都可以做。InnoDB、Sqlite4也是KV store。</p></li>
+
+<li><p><a href="http://andrewkelley.me/post/intro-to-zig.html">Introduction to the Zig Programming Language</a></p>
+
+<p>可以方便调用C和被C调用，支持Maybe类型，error和defer的处理也比Go好。</p></li>
+
+<li><p><a href="https://www.cockroachlabs.com/blog/parallel-sql-statements/">Executing Parallel Statements to Improve Performance</a></p>
+
+<p>扩展SQL语法，用RETURNING NOTHING表示不返回结果，语句会异步执行，也就可以和其他语句并发，
+加上并发语句间的依赖分析，可以避免不正确的并发，30%的性能提升。</p></li>
+
+<li><p><a href="https://www.nextplatform.com/2017/11/30/reinventing-fpga-programming-wheel/">Reinventing the FPGA Programming Wheel</a></p>
+
+<p>用FPGA加速超算和数据中心是未来，甚至hardware as a service</p></li>
+
+<li><p><a href="http://www.stephendiehl.com/posts/haskell_2018.html">Reflecting on Haskell in 2017</a></p>
+
+<p>Haskell 2017年回顾</p></li>
+
+<li><p><a href="http://codeitdown.com/icarus-verilog-on-windows/">Getting started with Icarus Verilog on Windows</a></p></li>
+
+<li><p><a href="http://www.mathyvanhoef.com/2016/03/how-mac-address-randomization-works-on.html">How MAC Address Randomization Works on Windows 10</a></p>
+
+<p>Win10的MAC地址随机化：</p>
+
+<pre><code>address = SHA-256(SSID, real MAC address, connectionId, secret)
+</code></pre>
+
+<p>但是在WiFi frames里的序列号没重置，HotSpot也是直接发真实MAC。</p></li>
+
+<li><p><a href="https://blog.gopheracademy.com/advent-2017/make/">Automating Go development with Make</a></p>
+
+<p>用makefile编译、安装工具。</p></li>
+
+<li><p><a href="https://bluishcoder.co.nz/2017/12/02/cross-compiling-ats-programs.html">Cross Compiling ATS Programs</a></p>
+
+<p>交叉编译ATS程序，因为ATS会编译到C，可以重用C的工具链</p></li>
+
+<li><p><a href="https://lobste.rs/s/8vniaj/memory_security_go">Memory Security in Go </a></p>
+
+<p>用来发敏感数据，考虑到缓冲区溢出、被Gc复制、进程被dump等各种情况。</p></li>
+</ul>
+
+</div>
+
+    
+<footer class='entry-footer'>
+  
+    
+  
+    
+  
+</footer>
+
+
+  </article>
+
+  
+    
+<nav class='entry-nav'>
+  <div class='entry-nav-links'><div class='prev-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-11-29/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader'>Previous post: </span>2017-11-29</a>
+    </div><div class='next-entry'>
+      <a href='https://oraoto.github.io/daily/posts/2017-12-05/'>
+        <span class='screen-reader'>Next post: </span>2017-12-05<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+  
+
+  
+    <div class='comments-container'>
+  
+</div>
+
+  
+</main>
+
+    <footer id='footer' class='footer-container'>
+      <div class='footer'>
+        <div class='social'>
+  <nav aria-label='Social Menu'>
+    <ul class='social-menu'></ul>
+  </nav>
+</div>
+
+        <div class='copyright'>
+          <p>
+    
+      
+    
+  
+  &copy; 2017-2018 Oraoto</p>
+
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src='/daily/js/main.af838dd5.js'></script>
+  
+    <script src='/daily/js/custom.js'></script>
+  
+
+</body>
+
+</html>
+
